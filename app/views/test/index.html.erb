@@ -1,4 +1,11 @@
-<h1>Zero Hottest Tracks</h1>
+<h1>Ten Hottest Tracks</h1>
+<%= render "shared/soundcloud" %>
+<% @tracks.each do |track|  %>
+  <p>
+   <%= track.title %> - <%= track.user.permalink_url %>
+  </p>
+<% end  %>
 
+<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 <%= console %>
 <%= render "shared/player" %>
