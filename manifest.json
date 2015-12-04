@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pomodoro Harvest",
+  "description": "Trello extension for chrome, trello, pomodoro and harvest",
+  "version": "0.1",
+
+  "permissions": [
+    "tabs"
+  ],
+
+  "background": {
+    "scripts": [
+      "/build/js/vendor/jquery.min.js",
+      "/build/js/vendor/react.js",
+      "/build/js/background.js"
+    ],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://trello.com/*"
+      ],
+      "css": [
+        
+      ],
+      "js": [
+        "/build/js/vendor/jquery.min.js",
+        "/build/js/vendor/react.js",
+        "/build/js/client-bundle.js"
+      ]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "/build/js/page_functions.js",
+    "/build/images/tomato_icon.png"
+  ]
+}

@@ -1,0 +1,1 @@
+This is a great chrome extension. You will <em>love</em> it.
