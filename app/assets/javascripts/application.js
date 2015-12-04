@@ -35,8 +35,17 @@ $(function(){
     var query = { q: $('#query').val() };
     var widget = SC.Widget('player');
     SC.get('/tracks', query).then(function(tracks) {
-      widget.load(tracks[0].uri);
+      $('.tracks-list').html('');
+      $.each(tracks, function(index, value){
+        $('.tracks-list').append('<li>' + value.title + '</li><button type="button" data-uri="' + value.uri + '">Add</button>');
+      });
     });
+  });
+
+  $('.tracks-list').on('click', 'button', function(event){
+    event.preventDefault();
+    var widget = SC.Widget('player');
+    widget.load($(this).data('uri'));
   });
 
 });
