@@ -14,9 +14,9 @@
   },
   "permissions": [
     "tabs",
-    "activeTab",
+    // "activeTab",
     "declarativeContent",
-    "https://soundcloud.com/"
+    "https://soundcloud.com/*"
   ],
   "content_scripts": [
     {
