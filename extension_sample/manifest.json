@@ -14,7 +14,7 @@
   },
   "permissions": [
     "tabs",
-    // "activeTab",
+    "activeTab",
     "declarativeContent",
     "https://soundcloud.com/*"
   ],
@@ -22,7 +22,7 @@
     {
       "run_at": "document_end",
       "matches": ["https://soundcloud.com/*"],
-      "js": ["soundbox_browser.js", "soundbutton.js"]
+      "js": ["soundbutton.js"]
     }
   ]
 }

@@ -1,19 +1,27 @@
 //why is it running more than once? looks like whenever something changes on the page, these scripts run (like, when I paused the song)
-
+var myFunc = function() {
   console.log("I'm running");
-  var trackURL = window.location.href; // this just gets the current url - need to check it's actually a track. i guess it would only save
-  // when someone clicks the 'save track' button
+  var trackURL = window.location.href;
   console.log(trackURL);
+  var track = document.getElementsByClassName('soundTitle__title')[0];
+  console.log(track);
+  var trackLink = track.baseURI;
+  console.log(trackLink);
+}
+
+window.setInterval(myFunc, 3000);
+
+// this just gets the current url - need to check it's actually a track. i guess it would only save
+  // when someone clicks the 'save track' button
+
 
 
   // addButton.addEventListener('click', function() {
   //   console.log("I'm clicked!");
   // });
 
-  var track = document.getElementsByClassName('soundTitle__title')[0];
-  console.log(track);
-  // var trackLink = track.getAttribute('href');
-  // console.log(trackLink);
+
+
   // track.addEventListener('click', function(event) {
   //   event.preventDefault();
   //   songLink.getAttribute('href');
