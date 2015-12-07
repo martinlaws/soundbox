@@ -1,3 +1,4 @@
+// What does this do? -M
 chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
     suggest([
       {content: text + " one", description: "the first one"},
