@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/martinlaws/soundbox/issues"
   },
-  "homepage": "https://github.com/martinlaws/soundbox#readme"
+  "homepage": "https://github.com/martinlaws/soundbox#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.3.13"
+  }
 }
