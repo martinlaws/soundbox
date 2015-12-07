@@ -18,6 +18,3 @@ $(document).ready(function() {
   });
 
 });
-
-// maybe for now, you can append these tracks to the page. how do you store the html popup?
-// inject an add button into div for each track. same functionality as the address bar icon
