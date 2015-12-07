@@ -1,57 +1,13 @@
-//why is it running more than once? looks like whenever something changes on the page, these scripts run (like, when I paused the song)
-var myFunc = function() {
-  console.log("I'm running");
-  var trackURL = window.location.href;
-  console.log(trackURL);
-  var track = document.getElementsByClassName('soundTitle__title')[0];
-  console.log(track);
-  var trackLink = track.baseURI;
-  console.log(trackLink);
-}
+// Copyright (c) 2014 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
-window.setInterval(myFunc, 3000);
-
-// this just gets the current url - need to check it's actually a track. i guess it would only save
-  // when someone clicks the 'save track' button
-
-
-
-  // addButton.addEventListener('click', function() {
-  //   console.log("I'm clicked!");
-  // });
-
-
-
-  // track.addEventListener('click', function(event) {
-  //   event.preventDefault();
-  //   songLink.getAttribute('href');
-  // });
-
-
-// could you do an onclick event for your soundbox button - I guess that's what activeTabe refers to, once you press the icon in 
-//  <a class="soundTitle__title sc-link-dark" href="/kompakt/clarian-ver-11-am-mix">
-
-// when the extension is first installed
-// chrome.runtime.onInstalled.addListener(function(details) {
-//     chrome.storage.sync.set({be_a_buzzkill: true});
-// });
-
-// listen for any changes to the URL of any tab.
-// chrome.tabs.onUpdated.addListener(function(id, info, tab){
-
-
-//     if (tab.url.toLowerCase().indexOf("soundcloud.com") > -1){
-//         chrome.pageAction.show(tab.id);
-
-//         chrome.storage.sync.get("be_a_buzzkill", function(data){
-//             if (data["be_a_buzzkill"] && tab.url.toLowerCase().indexOf("facebook.com/buzzfeed") !== -1){
-//                 chrome.tabs.update(tab.id, {url: "http://www.facebook.com/?no-buzzfeed-for-you!"});
-//             }
-//         });
-//     }
-
-// });
-
+/**
+ * Get the current URL.
+ *
+ * @param {function(string)} callback - called when the URL of the current tab
+ *   is found.
+//  */
 // function getCurrentTabUrl(callback) {
 //   // Query filter to be passed to chrome.tabs.query - see
 //   // https://developer.chrome.com/extensions/tabs#method-query
