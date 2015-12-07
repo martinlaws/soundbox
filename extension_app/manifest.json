@@ -11,7 +11,7 @@
   },
   "page_action": {
     "default_icon": "box.png",
-    "default_popup": "soundbox.html",
+    "default_popup": "soundbox_popup.html",
     "default_title": "You're on SoundCloud! Add to SoundBox"
   },
   "permissions": [
@@ -25,7 +25,7 @@
       "run_at": "document_end",
       "matches": ["https://soundcloud.com/*"],
       "css": ["soundbox.css"],
-      "js": ["react.js", "react-dom.js", "soundbox_content.js"]
+      "js": ["react.js", "react-dom.js", "soundbox_extension.js"]
     }
   ],
   "web_accessible_resources": [

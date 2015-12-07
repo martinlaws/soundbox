@@ -1,4 +1,16 @@
-
+var popup_box = React.createClass({
+  render: function() {
+    return (
+      <div className="soundBox">
+        Hello, world! I am a SoundBox.
+      </div>
+    );
+  }
+});
+ReactDOM.render(
+  <popup_box />,
+  document.getElementById('soundbox_app')
+);
 
 
 // $().ready(function() {
