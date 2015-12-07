@@ -12,7 +12,7 @@
 // }
 $().ready(function() {
   var custom_icon = chrome.extension.getURL("box.png");
-  var $soundBoxButton = $('<button class="icon-button btn-soundbox"><img class=" sc-button sc-button-small sc-button-responsive" title="Add to Soundbox" src="' + custom_icon + '" /></button>');
+  var $soundBoxButton = $('<button class="icon-button"><img class="sc-button-small sc-button-responsive" title="Add to Soundbox" src="' + custom_icon + '" /></button>');
 
   var $customIconImage = $('<img class="icon" title="Add to Soundbox" src="' + custom_icon + '" />');
   // $('.soundStats.sc-ministats-group').append($soundBoxButton).clone();
