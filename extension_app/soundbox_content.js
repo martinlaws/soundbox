@@ -21,7 +21,7 @@ $().ready(function() {
   // $('.playbackSoundBadge__actions').append($customIconImage).clone();
 
     // $('.soundList__item').append($soundBoxButton);
-    $('.sc-button-group.sc-button-group-small').append($soundBoxButton).on('click', function() {
+    $('.soundActions.sc-button-toolbar.soundActions__small').append($soundBoxButton).on('click', function() {
       alert('test!')
     })
 
