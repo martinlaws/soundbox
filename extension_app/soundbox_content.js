@@ -12,7 +12,7 @@
 // }
 $().ready(function() {
   var custom_icon = chrome.extension.getURL("box.png");
-  var $soundBoxButton = $('<button class="icon-button"><img class="icon" title="Add to Soundbox" src="' + custom_icon + '" /></button>');
+  var $soundBoxButton = $('<button class="icon-button"><img class=" sc-button sc-button-small sc-button-responsive" title="Add to Soundbox" src="' + custom_icon + '" /></button>');
 
   var $customIconImage = $('<img class="icon" title="Add to Soundbox" src="' + custom_icon + '" />');
   // $('.soundStats.sc-ministats-group').append($soundBoxButton).clone();
@@ -20,14 +20,15 @@ $().ready(function() {
   // // page load (like, if you scroll down and the page needs to load more items)
   // $('.playbackSoundBadge__actions').append($customIconImage).clone();
 
-    $('.soundStats.sc-ministats-group').append($soundBoxButton);
-    $('.compactTrackListItem__content').append($soundBoxButton);
+    // $('.soundList__item').append($soundBoxButton);
+    $('.sc-button-group.sc-button-group-small').append($soundBoxButton);
+    // $('.compactTrackListItem__content').append($soundBoxButton);
 
-  
+
   // window.setInterval(addButton, 3000);
 });
 
-  
+
 
 
   // $('.soundActions.sc-button-toolbar.soundActions__medium').append($customIconImage);
@@ -48,4 +49,3 @@ $().ready(function() {
 // click on soundbox icon, it opens up your soundbox to add to the box of your choice
 // maybe show most popular boxes
 // also have an option for sending to a friend
-
