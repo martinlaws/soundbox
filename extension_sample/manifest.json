@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "SoundBox",
+  "description": "This extension grabs a song from Soundcloud and stores it in a SoundBox",
+  "version": "1.0",
+  "devtools_page": "devtools.html",
+  "omnibox": { "keyword" : "sound" },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "box.png",
+    "default_popup": "soundbox.html",
+    "default_title": "You're on SoundCloud! Add to SoundBox"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "declarativeContent",
+    "https://soundcloud.com/*"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["https://soundcloud.com/*"],
+      "css": ["soundbox.css"],
+      "js": ["jquery-2.1.4.js", "soundbox_content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "box.png"
+  ]
+}
