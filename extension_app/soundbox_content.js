@@ -22,6 +22,10 @@ $().ready(function() {
 
     // $('.soundList__item').append($soundBoxButton);
     $('.sc-button-group.sc-button-group-small').append($soundBoxButton);
+
+    $soundBoxButton.on('click', function() {
+      alert('test!');
+    });
     // $('.compactTrackListItem__content').append($soundBoxButton);
 
 
