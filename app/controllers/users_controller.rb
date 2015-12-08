@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  require 'soundcloud'
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # create client object with app credentials
+    client = Soundcloud.new(client_id: 'app/config/secrets.yml',
+                            client_secret: 'app/config/secrects.yml'
+                            redirect_uri: 'http://localhost:3000')
+    redirect_to client.authorize_url()
   end
 
   # GET /users/1

@@ -10,7 +10,6 @@ class BoxesController < ApplicationController
   # GET /boxes/1
   # GET /boxes/1.json
   def show
-    @box = Box.find(params[:id])
   end
 
   # GET /boxes/new
@@ -20,7 +19,6 @@ class BoxesController < ApplicationController
 
   # GET /boxes/1/edit
   def edit
-    @box = Box.find(params[:id])
   end
 
   # POST /boxes

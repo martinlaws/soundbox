@@ -1,16 +1,20 @@
 class TracksController < ApplicationController
+  before_action :get_client
   before_action :set_track, only: [:show, :edit, :update, :destroy]
 
   # GET /tracks
   # GET /tracks.json
   def index
-    @tracks = Track.all
+    @tracks = @client.get('/tracks', :limit => 10, :order => 'hotness')
+    if params
+      query = # parameters object
+      @tracks = @client.get('/tracks', query)
+    end
   end
 
   # GET /tracks/1
   # GET /tracks/1.json
   def show
-    @track = Track.find(params[:id])
   end
 
   # GET /tracks/new
@@ -65,12 +69,20 @@ class TracksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def get_client
+      @client = Soundcloud.new(client_id: 'YOUR_CLIENT_ID') # current user?
+    end
+
     def set_track
-      @track = Track.find(params[:id])
+      @track = @client.get(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def track_params
       params.require(:track).permit(:url, :box)
+    end
+
+    def query_params
+
     end
 end
