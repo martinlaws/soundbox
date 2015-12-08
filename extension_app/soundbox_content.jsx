@@ -1,3 +1,6 @@
+// var React = require('react');
+// var Sidebar = require('react-sidebar');
+
 var SoundBox = React.createClass({
   render: function() {
     return (
@@ -7,32 +10,35 @@ var SoundBox = React.createClass({
     );
   }
 });
-// 
-// var SoundButton = React.createClass({
+
+// var App = React.createClass({
+//   getInitialState: function() {
+//     return {sidebarOpen: false};
+//   },
+//
+//   onSetSidebarOpen: function(open) {
+//     this.setState({sidebarOpen: open});
+//   },
+//
 //   render: function() {
+//     var sidebarContent = <b>Sidebar content</b>;
+//
 //     return (
-//       <button
+//       <Sidebar sidebar={sidebarContent}
+//                open={this.state.sidebarOpen}
+//                onSetOpen={this.onSetSidebarOpen}>
+//         <b>Main content</b>
+//       </Sidebar>
 //     );
 //   }
 // });
+//
+// module.exports = App;
 
 ReactDOM.render(
   <SoundBox />,
   document.getElementById('soundbox-app')
 );
 
-//
-// ReactDOM.render(
-//   <testbox />,
-//   document.getElementById('soundbox-app')
-// );
 
-// $().ready(function() {
-//   var custom_icon = chrome.extension.getURL("box.png");
-//   var $soundBoxButton = $('<button class="icon-button"><img class="sc-button-small sc-button-responsive" title="Add to Soundbox" src="' + custom_icon + '" /></button>');
-//
-//   var $customIconImage = $('<img class="icon" title="Add to Soundbox" src="' + custom_icon + '" />');
-//     $('.soundActions.sc-button-toolbar.soundActions__small').append($soundBoxButton).on('click', function() {
-//       alert('test!')
-//     })
-// });
+// Fin

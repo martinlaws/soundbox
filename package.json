@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/martinlaws/soundbox#readme",
   "dependencies": {
-    "babel-preset-react": "^6.3.13"
+    "babel-preset-react": "^6.3.13",
+    "react-sidebar": "^2.0.0"
   }
 }
