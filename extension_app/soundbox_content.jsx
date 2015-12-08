@@ -1,6 +1,8 @@
 // var React = require('react');
 // var Sidebar = require('react-sidebar');
 
+var DropBox = React.
+
 var SoundBox = React.createClass({
   render: function() {
     return (

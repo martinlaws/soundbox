@@ -1,0 +1,19 @@
+{
+  "name": "soundbox-extension",
+  "version": "1.0.0",
+  "description": "SoundBox reimagines how people share their music.",
+  "main": "soundbox_extension.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinlaws/soundbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinlaws/soundbox/issues"
+  },
+  "homepage": "https://github.com/martinlaws/soundbox#readme"
+}

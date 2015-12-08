@@ -20,8 +20,7 @@
 
 .dropping-box {
   display: inline-block;
-  margin: 15px 10px;
-  width: 100px;
-  height: 100px;
+  width: 144px;
+  height: 40px;
   border: 3px white dashed;
 }
