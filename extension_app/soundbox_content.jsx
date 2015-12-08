@@ -4,9 +4,11 @@
 var SoundBox = React.createClass({
   render: function() {
     return (
-      <div className="soundBox">
-        Hello, world! I am a SoundBox.
-      </div>
+      <button onClick={ function() {
+          alert("ouch! you've clicked me!")
+        } } >
+        Add song to a box!
+      </button>
     );
   }
 });
@@ -35,10 +37,16 @@ var SoundBox = React.createClass({
 //
 // module.exports = App;
 
+var element = document.createElement('div');
+element.style.top = '50px';
+element.style.width = '150px';
+element.style.height = '500px';
+element.style.position = 'fixed';
+element.style.right = '0px';
+element.style.background = 'red';
+document.getElementsByTagName('body')[0].appendChild(element);
+
 ReactDOM.render(
   <SoundBox />,
-  document.getElementById('soundbox-app')
+  element
 );
-
-
-// Fin
