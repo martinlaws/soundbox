@@ -4,11 +4,21 @@
 var SoundBox = React.createClass({
   render: function() {
     return (
-      <button onClick={ function() {
-          alert("ouch! you've clicked me!")
-        } } >
-        Add song to a box!
-      </button>
+      <div>
+        <div className="dropping-box">
+          DROP YO TRACKS HERE
+        </div>
+        <button onClick={ function() {
+            alert("ouch! you've clicked me!")
+          } } >
+          Add song to a box!
+        </button>
+        <button onClick={ function() {
+            alert("ouch! you've clicked me!")
+          } } >
+          Add song to a box!
+        </button>
+      </div>
     );
   }
 });
@@ -38,12 +48,8 @@ var SoundBox = React.createClass({
 // module.exports = App;
 
 var element = document.createElement('div');
-element.style.top = '50px';
-element.style.width = '150px';
-element.style.height = '500px';
-element.style.position = 'fixed';
-element.style.right = '0px';
-element.style.background = 'red';
+element.className = 'soundbox-sidebar';
+
 document.getElementsByTagName('body')[0].appendChild(element);
 
 ReactDOM.render(
