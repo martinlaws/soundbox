@@ -1,4 +1,4 @@
-var popup_box = React.createClass({
+var SoundBox = React.createClass({
   render: function() {
     return (
       <div className="soundBox">
@@ -7,11 +7,25 @@ var popup_box = React.createClass({
     );
   }
 });
+
+var SoundButton = React.createClass({
+  render: function() {
+    return (
+      <button
+    );
+  }
+});
+
 ReactDOM.render(
-  <popup_box />,
-  document.getElementById('soundbox_app')
+  <SoundBox />,
+  document.getElementById('soundbox-app')
 );
 
+//
+// ReactDOM.render(
+//   <testbox />,
+//   document.getElementById('soundbox-app')
+// );
 
 // $().ready(function() {
 //   var custom_icon = chrome.extension.getURL("box.png");
