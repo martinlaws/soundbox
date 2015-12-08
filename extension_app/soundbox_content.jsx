@@ -7,14 +7,14 @@ var SoundBox = React.createClass({
     );
   }
 });
-
-var SoundButton = React.createClass({
-  render: function() {
-    return (
-      <button
-    );
-  }
-});
+// 
+// var SoundButton = React.createClass({
+//   render: function() {
+//     return (
+//       <button
+//     );
+//   }
+// });
 
 ReactDOM.render(
   <SoundBox />,
