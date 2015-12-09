@@ -7,14 +7,14 @@ class TracksController < ApplicationController
   def index
     @tracks = @client.get('/tracks', :limit => 10, :order => 'hotness')
     if params
-      query = # parameters object
-      @tracks = @client.get('/tracks', query)
+      @tracks = @client.get('/tracks', query_params)
     end
   end
 
   # GET /tracks/1
   # GET /tracks/1.json
   def show
+    render json: @track
   end
 
   # GET /tracks/new

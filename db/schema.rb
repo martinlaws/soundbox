@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207183521) do
+ActiveRecord::Schema.define(version: 20151207190808) do
 
   create_table "boxes", force: :cascade do |t|
     t.string   "name"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20151207183521) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "admin",      default: false
   end
 
 end

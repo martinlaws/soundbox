@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   resources :tracks
   resources :boxes
   resources :users
+  resource :oauth, only: :create
+
+  namespace :api do
+    resources :users
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
