@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :tracks
   resources :boxes
-  resource :users
+  resource :user
   resource :oauth, only: :create
 
   namespace :api do
