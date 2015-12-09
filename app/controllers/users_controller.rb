@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def login
     session[:user_id] = 1
     if !current_user
-      render :'user/login'
+      render :'users/login'
     else
       render :'splash/index'
     end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.first
-    render :'/user/show'
+    render :'/users/:id/show'
   end
 
   # GET /user/new

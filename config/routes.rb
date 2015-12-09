@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :tracks
-  resources :boxes
-  resource :user
   resource :oauth, only: :create
+
+  resources :users, except: :index do
+    resources :boxes
+  end
 
   namespace :api do
     resources :users
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
