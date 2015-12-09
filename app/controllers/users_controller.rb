@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def login
-    render :'user/login'
-
+    session[:user_id] = 1
+    if !current_user
+      render :'user/login'
+    else
+      render :'splash/index'
+    end
   end
 
   def show
@@ -16,6 +20,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+
+
   # GET /user/edit
   def edit
     @user = User.find(params[:id])
@@ -23,18 +29,18 @@ class UsersController < ApplicationController
 
   # POST /user
   # POST /user.json
-
+  def create
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        session[:user_id] = @user.id
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
-
   # PATCH/PUT /user/1
   # PATCH/PUT /user/1.json
   def update
