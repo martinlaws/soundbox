@@ -22,5 +22,16 @@ module SoundboxBackend
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+
+        resource '/oauth',
+        :headers => :any,
+        :methods => [:get, :post]
+      end
+    end
+
   end
 end
