@@ -15,3 +15,8 @@ chrome.runtime.onInstalled.addListener(function() {
     ]);
   });
 });
+
+// chrome.pageAction.onClicked.addListener(function(tab) {
+//   var viewTabUrl = chrome.extension.getURL('image.html');
+//   var imageUrl = /* an image's URL */;
+// }
