@@ -1,27 +1,18 @@
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
 .icon-button {
   border-style: none;
+  padding: 10px;
   background: transparent;
+  margin-left: 25%;
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
+.hide {
+  display: none;
 }
-
-.soundbox-sidebar {
-  background-color: #2fc2c2;
-  width: 150px;
-  height: 400px;
-  position: fixed;
-  top: 46px;
-  right: 0px;
-  text-align: center;
-}
-
-.dropping-box {
-  display: inline-block;
-  margin: 15px 10px;
-  width: 100px;
-  height: 100px;
-  border: 3px white dashed;
+show {
+  display: block;
 }
