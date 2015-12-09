@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "SoundBox reimagines how you share your favourite music.",
   "main": "soundbox_extension.js",
-  "dependencies": {},
+  "dependencies": {
+    "react-materialize": "^0.1.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

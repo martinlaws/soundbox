@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   resources :tracks
   resources :boxes
+<<<<<<< HEAD
   resources :users
   resource :oauth, only: :create
 
   namespace :api do
     resources :users
   end
+=======
+  resource :users
+>>>>>>> martin-test
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -56,9 +60,9 @@ Rails.application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
+    namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+      resources :users
+    end
 end
