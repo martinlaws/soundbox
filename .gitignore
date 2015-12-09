@@ -19,3 +19,6 @@
 # Ignore secrets, duh!
 /config/secrets.yml
 /.env
+
+#Ignore node_modules
+/extension_app/node_modules/*
