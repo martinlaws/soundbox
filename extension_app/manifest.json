@@ -3,8 +3,6 @@
   "name": "SoundBox",
   "description": "This extension grabs a song from Soundcloud and stores it in a SoundBox",
   "version": "1.0",
-  "devtools_page": "devtools.html",
-  "omnibox": { "keyword" : "sound" },
   "background": {
     "scripts": ["background.js"],
     "persistent": false
