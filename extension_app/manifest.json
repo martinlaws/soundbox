@@ -28,6 +28,7 @@
     }
   ],
   "web_accessible_resources": [
-    "box.png"
+    "box.png",
+    "close.png"
   ]
 }

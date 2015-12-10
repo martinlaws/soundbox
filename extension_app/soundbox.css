@@ -11,6 +11,7 @@
 }
 
 #option-menu {
+  font-family: Courier;
   height: 200px;
   width: 50%;
   background-color: lightgray;
@@ -26,9 +27,6 @@
 }
 
 .close {
-  background-color: white;
-  width: 25px;
-  height: 25px;
   position: absolute;
   top: 0px;
   right: 0px;
