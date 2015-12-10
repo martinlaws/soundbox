@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :tracks
-  resource :oauth, only: :create
+  resources :boxes
+  resources :users
+  get 'oauth/complete', to: 'oauth#complete'
+  get 'oauth/login', to: 'oauth#login'
 
   resources :users, except: :index do
     resources :boxes
