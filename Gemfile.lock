@@ -206,12 +206,10 @@ DEPENDENCIES
   google-webfonts-rails
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
   kaminari
-=======
   omniauth-soundcloud (~> 1.0.0)
   pry
->>>>>>> rails-integration
+  rails-integration
   rack-cors
   rack-oauth2
   rails (= 4.2.5)
