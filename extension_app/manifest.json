@@ -24,7 +24,7 @@
       "run_at": "document_end",
       "matches": ["https://soundcloud.com/*"],
       "css": ["soundbox.css"],
-      "js": ["jquery-2.1.4.js","popup_app.js", "soundbox_extension.js"],
+      "js": ["jquery-2.1.4.js","popup_app.js", "soundbox_content.js"],
       "json": ["fakedata.json"]
     }
   ],
