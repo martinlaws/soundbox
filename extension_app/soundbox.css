@@ -9,3 +9,27 @@
   background: transparent;
   margin-left: 25%;
 }
+
+#option-menu {
+  height: 200px;
+  width: 50%;
+  background-color: lightgray;
+  position: fixed;
+  bottom: -200px;
+  left: 0px;
+  z-index: 100;
+  transition: all 1s ease;
+}
+
+#option-menu.show-menu {
+  bottom: 0px;
+}
+
+.close {
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
