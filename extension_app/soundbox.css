@@ -10,9 +10,24 @@
   margin-left: 25%;
 }
 
-.hide {
-  display: none;
+#option-menu {
+  font-family: Courier;
+  height: 200px;
+  width: 50%;
+  background-color: lightgray;
+  position: fixed;
+  bottom: -200px;
+  left: 0px;
+  z-index: 100;
+  transition: all 1s ease;
 }
-show {
-  display: block;
+
+#option-menu.show-menu {
+  bottom: 0px;
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
