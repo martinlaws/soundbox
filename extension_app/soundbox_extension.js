@@ -1,35 +1,35 @@
 // var React = require('react');
 // var Sidebar = require('react-sidebar');
 
-var SoundBox = React.createClass({
-  displayName: "SoundBox",
-
-  render: function () {
-    return React.createElement(
-      "div",
-      null,
-      React.createElement(
-        "div",
-        { className: "dropping-box" },
-        "DROP YO TRACKS HERE"
-      ),
-      React.createElement(
-        "button",
-        { onClick: function () {
-            alert("ouch! you've clicked me!");
-          } },
-        "Add song to a box!"
-      ),
-      React.createElement(
-        "button",
-        { onClick: function () {
-            alert("ouch! you've clicked me!");
-          } },
-        "Add song to a box!"
-      )
-    );
-  }
-});
+// var SoundBox = React.createClass({
+//   displayName: "SoundBox",
+//
+//   render: function () {
+//     return React.createElement(
+//       "div",
+//       null,
+//       React.createElement(
+//         "div",
+//         { className: "dropping-box" },
+//         "DROP YO TRACKS HERE"
+//       ),
+//       React.createElement(
+//         "button",
+//         { onClick: function () {
+//             alert("ouch! you've clicked me!");
+//           } },
+//         "Add song to a box!"
+//       ),
+//       React.createElement(
+//         "button",
+//         { onClick: function () {
+//             alert("ouch! you've clicked me!");
+//           } },
+//         "Add song to a box!"
+//       )
+//     );
+//   }
+// });
 
 // var App = React.createClass({
 //   getInitialState: function() {
@@ -59,5 +59,3 @@ var element = document.createElement('div');
 element.className = 'soundbox-sidebar';
 
 document.getElementsByTagName('body')[0].appendChild(element);
-
-ReactDOM.render(React.createElement(SoundBox, null), element);

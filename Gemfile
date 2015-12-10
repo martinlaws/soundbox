@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pry'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -28,6 +30,8 @@ gem 'rack-cors', :require => 'rack/cors'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'soundcloud'
+gem 'omniauth-soundcloud', '~> 1.0.0'
+gem 'rack-oauth2'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

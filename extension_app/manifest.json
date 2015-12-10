@@ -18,14 +18,15 @@
     "tabs",
     "activeTab",
     "declarativeContent",
-    "https://soundcloud.com/*"
+    "https://soundcloud.com/*",
+    "http://localhost:3000/*"
   ],
   "content_scripts": [
     {
       "run_at": "document_end",
       "matches": ["https://soundcloud.com/*"],
       "css": ["soundbox.css"],
-      "js": ["react.js", "react-dom.js", "soundbox_extension.js"],
+      "js": ["popup_app.js", "jquery-2.1.4.min.js", "background.js", "react.js", "react-dom.js", "soundbox_extension.js"],
       "json": ["fakedata.json"]
     }
   ],

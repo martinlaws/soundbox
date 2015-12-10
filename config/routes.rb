@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :tracks
   resources :boxes
   resources :users
-  resource :oauth, only: :create
+  get 'oauth/complete', to: 'oauth#complete'
+  get 'oauth/login', to: 'oauth#login'
 
   namespace :api do
     resources :users
