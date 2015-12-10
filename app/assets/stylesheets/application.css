@@ -15,3 +15,12 @@
  */
 
 //= require "skeleton"
+
+#main-nav {
+  display: block;
+}
+
+#main-nav button {
+  float: right;
+  margin: 0 1px;
+}
