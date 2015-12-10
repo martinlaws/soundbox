@@ -10,6 +10,15 @@ $().ready(function() {
     });
   }
 
+  function findPlayedTrackURL() {
+    var playerTrackURL = $('.playbackSoundBadge a').prop('href');
+    return playerTrackURL; // so this where you'd have to store to a db because the timeout call only returns its timeout ID
+  }
+
+  $('.compactTrackListItem__content').on('click', function() {
+    var playerUrl = setTimeout(findPlayedTrackURL, 2000);
+  });
+
   setInterval(addButton, 1000);
 
 });
