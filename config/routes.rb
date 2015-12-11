@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users
     resources :tracks
+    resources :boxes
   end
 
   namespace :admin do
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#show'
+  root 'boxes#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
