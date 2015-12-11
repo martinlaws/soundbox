@@ -1,10 +1,10 @@
 $().ready(function() {
 
+  var trackURL;
   var boxIcon = chrome.extension.getURL("box.png");
   var closeIcon = chrome.extension.getURL("close.png");
 
   var $soundBoxButton = $('<button class="icon-button"><img class="icon" title="Add to Soundbox" src="' + boxIcon + '" /></button>');
-
   var $soundBoxMenu = $('<div id="option-menu"><button class="close"><img class="icon" id="close-button" title="Close Window" src="' + 
     closeIcon + '" /></button></div>');
 
@@ -12,8 +12,26 @@ $().ready(function() {
 
   function addButton() {
     $('.sound__artwork').not('.appended').addClass('appended').append($soundBoxButton).on('click', function() {
-      var trackURL = $(this).children('a').prop('href');
+      
+      trackURL = $(this).children('a').prop('href');
       $('#option-menu').addClass('show-menu').append($('<p>' + trackURL + '</p>'));
+
+      chrome.runtime.sendMessage({track: trackURL}, function(response) {
+        console.log(response.message);
+      });
+
+      // $.ajax({
+      //   url:'http://localhost:3000/boxes',
+      //   method: 'POST',
+      //   dataType:'string',
+      //   success: function(response) {
+      //     console.log(response);
+      //   }
+      //   // success: function(trackURL) {
+      //   //   $('#target-div').text(trackURL);
+      //   //   console.log('success!');
+      //   // }
+      //  });
     });
   }
 
@@ -31,5 +49,6 @@ $().ready(function() {
   });
 
   setInterval(addButton, 1000);
+
 
 });

@@ -16,7 +16,13 @@ chrome.runtime.onInstalled.addListener(function() {
   });
 });
 
-// chrome.pageAction.onClicked.addListener(function(tab) {
-//   var viewTabUrl = chrome.extension.getURL('image.html');
-//   var imageUrl = /* an image's URL */;
-// }
+var trackData = chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (typeof request.track === "string") {
+      sendResponse({message: "success!"});
+    }
+    return request.track
+});
