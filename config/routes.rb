@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   
   # Routes for API calls from Google Chrome Extension
   namespace :api do
-    resources :users, only: [:create, :update]
+    resources :users, only: [:create, :update] do
+      post '/users/:id/boxes/:box_id', to: 'api/users#upload'
+    end
   end
 
 end
