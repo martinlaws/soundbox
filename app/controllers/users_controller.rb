@@ -2,15 +2,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
-
-    @user = current_user
-    binding.pry
     # render :'/users/:id/show'
   end
 
   # GET /user/new
   def new
     @user = User.new
+    render :'/users/new'
   end
 
 
