@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider "soundcloud", ENV['SOUNDCLOUD_CLIENT_ID'], ENV['SOUNDCLOUD_SECRET']
+  provider "soundcloud", Rails.application.secrets.soundcloud_client_id, Rails.application.secrets.soundcloud_secret_key
 end

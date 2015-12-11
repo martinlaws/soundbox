@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     attr_required (1.0.0)
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -98,6 +99,7 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
+    oauth (0.4.7)
     oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -168,6 +170,10 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
+    sorcery (0.9.1)
+      bcrypt (~> 3.1)
+      oauth (~> 0.4, >= 0.4.4)
+      oauth2 (>= 0.8.0)
     soundcloud (0.3.2)
       hashie (~> 2.0)
       httmultiparty (~> 0.3.0)
@@ -207,6 +213,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  omniauth
   omniauth-soundcloud (~> 1.0.0)
   pry
   rack-cors
@@ -215,6 +222,7 @@ DEPENDENCIES
   responders
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  sorcery
   soundcloud
   spring
   sqlite3

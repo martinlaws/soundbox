@@ -5,5 +5,5 @@ $('#login').on('click', function() {
     // FIXME Race-condition prone if you open multiple services in parallel
       debugger;
 
-    var authWindow = window.open('https://soundcloud.com/connect/?client_id=' + clientID + '&redirect_uri=' + redirectURI + '&response_type=code&state=soundcloud');
+    var authWindow = window.open('localhost:3000/auth/soundcloud');
 });

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :sessions
+  resources :authentications
   resources :tracks
   resources :boxes
   resources :users
-  get 'oauth/complete', to: 'oauth#complete'
-  get 'oauth/login', to: 'oauth#login'
+  # get 'oauth/complete', to: 'oauth#complete'
+  # get 'oauth/login', to: 'oauth#login'
+
+  get '/auth/:provider/callback', to: 'sessions#create'
 
   resources :users, except: :index do
     resources :boxes
@@ -11,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users
+    resources :tracks
   end
 
   namespace :admin do
@@ -21,7 +26,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#login'
+  root 'users#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

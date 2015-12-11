@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209203906) do
+ActiveRecord::Schema.define(version: 20151210235436) do
 
   create_table "boxes", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20151209203906) do
   end
 
   add_index "boxes", ["user_id"], name: "index_boxes_on_user_id"
+
+  create_table "sessions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "index"
+    t.string   "create"
+    t.string   "destroy"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tracks", force: :cascade do |t|
     t.string   "url"
@@ -35,6 +46,8 @@ ActiveRecord::Schema.define(version: 20151209203906) do
     t.datetime "updated_at",                 null: false
     t.boolean  "admin",      default: false
     t.string   "token"
+    t.string   "uid"
+    t.string   "provider"
   end
 
 end

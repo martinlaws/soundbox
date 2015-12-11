@@ -1,18 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  def login
-    session[:user_id] = 1
-    if !current_user
-      render :'users/login'
-    else
-      render :'splash/index'
-    end
-  end
-
   def show
-    @user = User.first
-    render :'/users/:id/show'
+    # @user = User.first
+    # render :'/users/:id/show'
   end
 
   # GET /user/new
@@ -68,7 +59,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(current_user)
+      @user = User.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
