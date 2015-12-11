@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     user.username = auth_hash["extra"]["raw_info"]["username"]
     user.save
     session[:user_id] = user.id
+    binding.pry
     redirect_to '/'
   end
 
