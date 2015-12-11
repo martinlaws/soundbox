@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :users
-    resources :tracks
+    resources :users, only: [:create, :update]
   end
 
   namespace :admin do
