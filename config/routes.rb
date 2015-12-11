@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  
-  root 'users#show'
+
+  root 'splash#splash'
 
   # Routes for Sessions and Authentication
   resources :sessions, only: [:create, :destroy]
