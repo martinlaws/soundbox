@@ -1,13 +1,15 @@
 class Admin::UsersController < ApplicationController
-
-  before_action :check_admin
+  # Since we don't have real logins yet, i've commented this out -M
+  # before_action :check_admin
 
   def index
     @users = User.all.page(params[:page]).per(10)
+    render :'admin/index'
   end
 
   def show
     @user = User.find(params[:id])
+    render :'admin/show'
   end
 
   def new

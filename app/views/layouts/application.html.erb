@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SoundboxBackend</title>
+  <title>SoundBox</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= google_webfonts_init({
+    google: ['Roboto']
+  }) %>
 </head>
 <body>
-
+  <div class="row">
+    <nav id="main-nav">
+      <button class="button-primary">Log in</button>
+      <button class="button-primary">Sign up</button>
+      <button class="button-primary">My Boxes</button>
+    </nav>
+  </div>
 <%= yield %>
 
+<% console %>
 </body>
 </html>

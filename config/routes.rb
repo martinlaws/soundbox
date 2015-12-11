@@ -1,17 +1,32 @@
 Rails.application.routes.draw do
+  resources :sessions
+  resources :authentications
   resources :tracks
   resources :boxes
   resources :users
-  resource :oauth, only: :create
+  # get 'oauth/complete', to: 'oauth#complete'
+  # get 'oauth/login', to: 'oauth#login'
+
+  get '/auth/:provider/callback', to: 'sessions#create'
+
+  resources :users, except: :index do
+    resources :boxes
+  end
 
   namespace :api do
     resources :users
+    resources :tracks
   end
+
+  namespace :admin do
+    resources :users
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'users#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -54,11 +69,4 @@ Rails.application.routes.draw do
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
