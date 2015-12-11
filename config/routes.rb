@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   resources :sessions
   resources :authentications
-  resources :tracks
-  resources :boxes
-  resources :users
+
+  resources :users do
+    resources :boxes do
+      resources :tracks
+    end
+  end
   # get 'oauth/complete', to: 'oauth#complete'
   # get 'oauth/login', to: 'oauth#login'
 
