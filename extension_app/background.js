@@ -46,10 +46,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
         };
         xhttp.open(method, request.url, true);
         if (method == 'POST') {
-            xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          xhttp.setRequestHeader("Content-Type", "application/json");
         }
 
-        xhttp.send(request.data.track);
+        xhttp.send(JSON.stringify(request.data.track));
         return true; // prevents the callback from being called too early on return
     }
 });

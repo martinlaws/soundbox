@@ -30,6 +30,7 @@ class Api::TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
+
     @track = Track.new(track_params)
 
     respond_to do |format|
