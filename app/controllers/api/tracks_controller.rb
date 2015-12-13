@@ -30,10 +30,12 @@ class Api::TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
-byebug
+
     @track = Track.new(track_params)
 
     respond_to do |format|
+      byebug
+
       if @track.save
         format.html { redirect_to @track, notice: 'Track was successfully created.' }
         format.json { render :show, status: :created, location: @track }
