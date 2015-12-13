@@ -27,7 +27,7 @@ module SoundboxBackend
       allow do
         origins '*'
 
-        resource '/oauth',
+        resource '*',
         :headers => :any,
         :methods => [:get, :post]
       end
