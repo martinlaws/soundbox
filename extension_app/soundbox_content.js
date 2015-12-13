@@ -5,7 +5,7 @@ $().ready(function() {
 
   var $soundBoxButton = $('<button class="icon-button"><img class="icon" title="Add to Soundbox" src="' + boxIcon + '" /></button>');
 
-  var $soundBoxMenu = $('<div id="option-menu"><button class="close"><img class="icon" id="close-button" title="Close Window" src="' + 
+  var $soundBoxMenu = $('<div id="option-menu"><button class="close"><img class="icon" id="close-button" title="Close Window" src="' +
     closeIcon + '" /></button></div>');
 
   $('body').append($soundBoxMenu);

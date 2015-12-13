@@ -11,8 +11,6 @@ class UsersController < ApplicationController
     render :'/users/new'
   end
 
-
-
   # GET /user/edit
   def edit
     @user = User.find(params[:id])
