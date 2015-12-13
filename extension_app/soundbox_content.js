@@ -69,4 +69,6 @@ $().ready(function() {
     setTimeout(findPlayedTrackData, 1000);
   });
 
+  setInterval(addButton, 1000);
+
 });
