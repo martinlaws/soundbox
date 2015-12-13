@@ -1,5 +1,3 @@
 class TrackSerializer < ActiveModel::Serializer
-  attributes :id, :url
-
-  belongs_to :box
+  attributes :url, :title, :artist, :track
 end

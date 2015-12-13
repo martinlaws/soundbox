@@ -13,7 +13,35 @@ $().ready(function() {
   function addButton() {
     $('.sound__artwork').not('.appended').addClass('appended').append($soundBoxButton).on('click', function() {
       var trackURL = $(this).children('a').prop('href');
-      $('#option-menu').addClass('show-menu').append($('<p>' + trackURL + '</p>'));
+      var trackInfo = $(this).find('span.sc-artwork').attr('aria-label').split("-");
+      var trackTitle = trackInfo[0];
+      var trackArtist = trackInfo[1];
+      // if (trackInfo.indexOf("-") > -1 ){
+        // trackInfo.split(" - ");
+        // var trackTitle = trackInfo[0];
+        // var trackArtist = trackInfo[1];
+      // } else {
+      //   var trackTitle = trackInfo;
+      //   var trackArtist = "";
+      // }
+
+      trackData["url"] = trackURL;
+      trackData["title"] = trackTitle;
+      trackData["artist"] = trackArtist;
+
+      // var id = 1;
+      // var boxId = 2;
+
+      chrome.runtime.sendMessage({
+        method: 'POST',
+        action: 'xhttp',
+        // url: 'http://localhost:3000/api/users/' + id + '/boxes/' + boxId + '/tracks',
+        url: 'http://localhost:3000/api/tracks',
+        data: {track: trackData}
+      }, function(response) {
+        console.log(response);
+        /*Callback function to deal with the response*/
+      });
     });
   }
 
@@ -30,6 +58,9 @@ $().ready(function() {
     var playerUrl = setTimeout(findPlayedTrackURL, 2000);
   });
 
+<<<<<<< HEAD
   setInterval(addButton, 1000);
 
+=======
+>>>>>>> buttons-are-back
 });
