@@ -16,8 +16,7 @@
     "tabs",
     "activeTab",
     "declarativeContent",
-    "https://soundcloud.com/*",
-    "http://localhost:3000/*"
+    "https://soundcloud.com/*"
   ],
   "content_scripts": [
     {
