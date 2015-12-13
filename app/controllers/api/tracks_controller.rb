@@ -39,7 +39,6 @@ byebug
       else
         format.json { render json: @track.errors, status: :unprocessable_entity }
       end
-      binding.pry
     end
   end
 
@@ -62,7 +61,6 @@ byebug
   def destroy
     @track.destroy
     respond_to do |format|
-      format.html { redirect_to tracks_url, notice: 'Track was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
