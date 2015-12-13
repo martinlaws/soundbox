@@ -58,9 +58,5 @@ $().ready(function() {
     var playerUrl = setTimeout(findPlayedTrackURL, 2000);
   });
 
-<<<<<<< HEAD
   setInterval(addButton, 1000);
-
-=======
->>>>>>> buttons-are-back
 });
