@@ -9,35 +9,22 @@ $().ready(function() {
   var $soundBoxMenu = $('<div id="option-menu"><button class="close"><img class="icon" id="close-button" title="Close Window" src="' + 
     closeIcon + '" /></button>' + trackForm + '</div>');
 
-  var trackList = [];
+  var trackData = {};
+
   $('body').append($soundBoxMenu);
 
   function addButton() {
     $('.sound__artwork').not('.appended').addClass('appended').append($soundBoxButton).on('click', function() {
       
       trackURL = $(this).children('a').prop('href');
+      // trackTitle = ;
+      // trackArtist = ;
       $('#option-menu').addClass('show-menu').append($('<p>' + trackURL + '</p>'));
-      trackList.push(trackURL);
-      return trackList;
 
+      trackData["url"] = trackURL;
+      return trackData;
     });
   }
-
-  // $('#crate').on('submit', function() {
-  //     $.post('/boxes', function(response) {
-  //       console.log(response);
-  //     });
-  //       // data: data,
-  //       // dataType:'string',
-  //       // success: function(response) {
-  //       //   console.log(response);
-  //       // }
-  //      });
-
-// $.post( "ajax/test.html", function( data ) {
-//   $( ".result" ).html( data );
-// });
-//   });
 
   function findPlayedTrackURL() {
     var playerTrackURL = $('.playbackSoundBadge a').prop('href');
@@ -59,8 +46,8 @@ $().ready(function() {
       chrome.runtime.sendMessage({
       method: 'POST',
       action: 'xhttp',
-      url: 'http://localhost:3000/api/users/1',
-      data: {tracks: trackList}
+      url: 'http://localhost:3000/api/users',
+      data: {track: trackData}
     }, function(response) {
       console.log(response);
     /*Callback function to deal with the response*/
