@@ -35,12 +35,11 @@ class Api::TracksController < ApplicationController
 
     respond_to do |format|
       if @track.save
-        format.html { redirect_to @track, notice: 'Track was successfully created.' }
         format.json { render :show, status: :created, location: @track }
       else
-        format.html { render :new }
         format.json { render json: @track.errors, status: :unprocessable_entity }
       end
+      binding.pry
     end
   end
 
@@ -80,7 +79,7 @@ class Api::TracksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def track_params
-      params.require(:track).permit(:url, :box)
+      params.require(:track).permit(:url, :title, :artist)
     end
 
     def query_params
