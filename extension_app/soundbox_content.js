@@ -73,4 +73,6 @@ $().ready(function() {
   //   });
   // });
 
+  setInterval(addButton, 1000);
+
 });

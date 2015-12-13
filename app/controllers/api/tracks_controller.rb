@@ -33,17 +33,12 @@ class Api::TracksController < ApplicationController
 
     @track = Track.new(track_params)
 
-    respond_to do |format|
-      byebug
-
-      if @track.save
-        format.html { redirect_to @track, notice: 'Track was successfully created.' }
-        format.json { render :show, status: :created, location: @track }
-      else
-        format.html { render :new }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
+    if @track.save
+      render json: @track
+    else
+      puts @track.errors
     end
+    
   end
 
   # PATCH/PUT /tracks/1
@@ -65,7 +60,6 @@ class Api::TracksController < ApplicationController
   def destroy
     @track.destroy
     respond_to do |format|
-      format.html { redirect_to tracks_url, notice: 'Track was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
