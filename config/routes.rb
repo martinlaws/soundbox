@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [:create, :update] do
       post '/users/:id/boxes/:box_id', to: 'api/users#upload'
+      post '/api/users/:id/boxes/:box_id/tracks', to: '/api/users_controller#upload'
     end
   end
 

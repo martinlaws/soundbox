@@ -1,62 +1,92 @@
 $().ready(function() {
 
-  var trackURL;
+  var trackData = {};
   var boxIcon = chrome.extension.getURL("box.png");
   var closeIcon = chrome.extension.getURL("close.png");
+
   var $soundBoxButton = $('<button class="icon-button"><img class="icon" title="Add to Soundbox" src="' + boxIcon + '" /></button>');
-  var trackInput = '<input type="hidden" value="tracks" /><input type="submit" value="Send to Soundbox" />'
-  var trackForm = '<form id="crate" action="/boxes" method="post">' + trackInput + '</form>';
-  var $soundBoxMenu = $('<div id="option-menu"><button class="close"><img class="icon" id="close-button" title="Close Window" src="' + 
-    closeIcon + '" /></button>' + trackForm + '</div>');
+  // var trackInput = '<input type="hidden" value="tracks" /><input type="submit" value="Send to Soundbox" />'
+  // var trackForm = '<form id="crate" action="/boxes" method="post">' + trackInput + '</form>';
+  // var $soundBoxMenu = $('<div id="option-menu"><button class="close"><img class="icon" id="close-button" title="Close Window" src="' + 
+  //   closeIcon + '" /></button>' + trackForm + '</div>');
 
-  var trackData = {};
+  // $('body').append($soundBoxMenu);
 
-  $('body').append($soundBoxMenu);
+  function addIndividualButton() {
+    // var $individualButton = '<div class="sc-button-share sc-button sc-button-small sc-button-responsive">' + $soundBoxButton + '</div';
+    $('.compactTrackListItem__content').not('.appended').addClass('appended').prepend($soundBoxButton);
+    // $('.sc-artwork.sc-artwork-placeholder-8 ')
+  }
 
   function addButton() {
     $('.sound__artwork').not('.appended').addClass('appended').append($soundBoxButton).on('click', function() {
-      
-      trackURL = $(this).children('a').prop('href');
-      // trackTitle = ;
-      // trackArtist = ;
-      $('#option-menu').addClass('show-menu').append($('<p>' + trackURL + '</p>'));
+
+      var trackURL = $(this).children('a').prop('href');
+      var trackInfo = $(this).find('span.sc-artwork').attr('aria-label');
+      if (trackInfo.indexOf("-") > -1 ){
+        trackInfo.split(" - ");
+        var trackTitle = trackInfo[0];
+        var trackArtist = trackInfo[1];
+      } else {
+        var trackTitle = trackInfo;
+        var trackArtist = ""; 
+      }
 
       trackData["url"] = trackURL;
-      return trackData;
+      trackData["title"] = trackTitle;
+      trackData["artist"] = trackArtist;
+      $('#option-menu').addClass('show-menu').append($('<p>' + trackData + '</p>'));
+
+      chrome.runtime.sendMessage({
+        method: 'POST',
+        action: 'xhttp',
+        url: 'http://localhost:3000/api/users/:id/boxes/:box_id/tracks',
+        data: {track: trackData}
+      }, function(response) {
+        console.log(response);
+        /*Callback function to deal with the response*/
+      });
+
     });
   }
 
-  function findPlayedTrackURL() {
-    var playerTrackURL = $('.playbackSoundBadge a').prop('href');
-    return playerTrackURL; // so this where you'd have to store to a db because the timeout call only returns its timeout ID
+  function findPlayedTrackData() {
+    var trackURL = $('.playbackSoundBadge__title')[0].href;
+    trackData["url"] = trackURL;
   }
+
+  setInterval(addButton, 1000);
+  setInterval(addIndividualButton, 1000);
 
   $('#close-button').on('click', function() {
     $('#option-menu').removeClass('show-menu');
   });
 
   $('.compactTrackListItem__content').on('click', function() {
-    var playerUrl = setTimeout(findPlayedTrackURL, 2000);
+    var trackInfo = $(this).find('span.compactTrackListItem__trackTitle').text().split("-");
+    var trackTitle = trackInfo[0];
+    var trackArtist = trackInfo[1];
+
+    trackData["title"] = trackTitle;
+    trackData["artist"] = trackArtist;
+    setTimeout(findPlayedTrackData, 1000);
   });
 
-  setInterval(addButton, 1000);
+ $('.icon-button').on('click', function() {
+  console.log("do something");
+ });
+  // $('#crate').on('submit', function(event) {
+  //     event.preventDefault();
+  //     chrome.runtime.sendMessage({
+  //     method: 'POST',
+  //     action: 'xhttp',
+  //     url: 'http://localhost:3000/api/users/:id/boxes/:box_id/tracks',
+  //     data: {track: trackData}
+  //   }, function(response) {
+  //     console.log(response);
+  //   /*Callback function to deal with the response*/
+  //   });
 
-  $('#crate').on('submit', function(event) {
-      event.preventDefault();
-      chrome.runtime.sendMessage({
-      method: 'POST',
-      action: 'xhttp',
-      url: 'http://localhost:3000/api/users',
-      data: {track: trackData}
-    }, function(response) {
-      console.log(response);
-    /*Callback function to deal with the response*/
-    });
-
-    // chrome.runtime.sendMessage({tracks: trackList}, function() {
-    //   console.log(tracks);
-    //   // console.log(response.message);
-    // });
-  });
+  // });
 
 });
