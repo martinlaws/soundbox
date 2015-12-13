@@ -30,7 +30,6 @@ class Api::TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
-
     @track = Track.new(track_params)
 
     respond_to do |format|
@@ -76,8 +75,12 @@ class Api::TracksController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # def track_params
+    #   params.require(:track).permit(:url, :box)
+    # end
+
     def track_params
-      params.require(:track).permit(:url, :title, :artist)
+      params.require(:track).permit(:url, :title, :artist, :box)
     end
 
     def query_params
