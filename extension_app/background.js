@@ -1,33 +1,3 @@
-chrome.runtime.onInstalled.addListener(function() {
-  // Replace all rules ...
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-    // With a new rule ...
-    chrome.declarativeContent.onPageChanged.addRules([
-      {
-        conditions: [
-          new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: { hostEquals: 'soundcloud.com' },
-          })
-        ],
-        // And shows the extension's page action.
-        actions: [ new chrome.declarativeContent.ShowPageAction() ]
-      }
-    ]);
-  });
-});
-
-// chrome.runtime.onMessage.addListener(
-//   function(request, sender, sendResponse) {
-//     console.log(request.data.tracks);
-
-//     // console.log(sender.tab ?
-//     //             "from a content script:" + sender.tab.url :
-//     //             "from the extension");
-//     // // if (typeof request.tracks === "array") {
-//     //   sendResponse({message: "I received the tracks!"});
-//     // }
-// });
-
 chrome.runtime.onMessage.addListener(function(request, sender, callback) {
     if (request.action == "xhttp") {
 
@@ -46,7 +16,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
         };
         xhttp.open(method, request.url, true);
         if (method == 'POST') {
-          xhttp.setRequestHeader("Content-Type", "application/json");
+          xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         }
 
         xhttp.send(JSON.stringify(request.data.track));
