@@ -30,7 +30,6 @@ class Api::TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
-
     @track = Track.new(track_params)
 
     if @track.save
@@ -38,7 +37,7 @@ class Api::TracksController < ApplicationController
     else
       puts @track.errors
     end
-    
+
   end
 
   # PATCH/PUT /tracks/1
