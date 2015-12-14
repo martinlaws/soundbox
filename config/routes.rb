@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-
+  
   # Routes for API calls from Google Chrome Extension
   namespace :api do
     # resources :users, only: [:create, :update]

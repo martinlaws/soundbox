@@ -1,7 +1,6 @@
 class Track < ActiveRecord::Base
-  
   belongs_to :box
 
-  validates :url, :artist, :title, presence: true
+  validates :username, :url, :title, :artist, presence: true
 
 end
