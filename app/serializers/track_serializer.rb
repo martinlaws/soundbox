@@ -1,5 +1,5 @@
 class TrackSerializer < ActiveModel::Serializer
   attributes :id, :url
 
-  belongs_to :box
+  has_one :box
 end
