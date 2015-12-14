@@ -40,6 +40,9 @@ $().ready(function() {
   //   $('.compactTrackListItem__content').not('.appended').addClass('appended').prepend($soundBoxButton);
   // }
 
+
+  // setInterval(addIndividualButton, 1000);
+
   // function findPlayedTrackData() {
   //   var trackURL = $('.playbackSoundBadge__title')[0].href;
   //   trackData["url"] = trackURL;
