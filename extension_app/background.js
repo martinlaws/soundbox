@@ -20,6 +20,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
         }
 
         xhttp.send(JSON.stringify(request.data.track));
+        return true; // prevents the callback from being called too early on return
     }
-    return true; // prevents the callback from being called too early on return
 });

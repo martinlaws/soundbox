@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SoundBox",
-  "description": "Bringing back the mixtape! On SoundCloud.",
+  "description": "This extension grabs a song from Soundcloud and stores it in a SoundBox",
   "version": "1.0",
   "background": {
     "scripts": ["background.js"],
@@ -23,10 +23,12 @@
       "run_at": "document_end",
       "matches": ["https://soundcloud.com/*"],
       "css": ["soundbox.css"],
-      "js": ["jquery-2.1.4.js","popup_app.js", "soundbox_content.js"]
+      "js": ["jquery-2.1.4.js","popup_app.js", "soundbox_content.js"],
+      "json": ["fakedata.json"]
     }
   ],
   "web_accessible_resources": [
-    "box.png"
+    "box.png",
+    "close.png"
   ]
 }
