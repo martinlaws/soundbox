@@ -32,13 +32,12 @@ class Api::TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
 
-    respond_to do |format|
-      if @track.save
-        format.json { render :show, status: :created, location: @track }
-      else
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
+    if @track.save
+      render json: @track
+    else
+      puts @track.errors
     end
+
   end
 
   # PATCH/PUT /tracks/1
