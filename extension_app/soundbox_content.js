@@ -23,7 +23,7 @@ $().ready(function() {
         // var trackArtist = trackInfo[1];
       // } else {
       //   var trackTitle = trackInfo;
-      //   var trackArtist = ""; 
+      //   var trackArtist = "";
       // }
 
       trackData["url"] = trackURL;
