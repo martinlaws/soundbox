@@ -6,7 +6,7 @@ class Api::TracksController < ApplicationController
   # GET /tracks.json
   def index
     @tracks = @client.get('/tracks', :limit => 10, :order => 'hotness')
-    if params
+    if query_params
       @tracks = @client.get('/tracks', query_params)
     end
   end
@@ -30,28 +30,22 @@ class Api::TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
-    byebug
     @track = Track.new(track_params)
 
     if @track.save
       render json: @track
     else
-      puts @track.errors
+      render json: @track.errors
     end
-
   end
 
   # PATCH/PUT /tracks/1
   # PATCH/PUT /tracks/1.json
   def update
-    respond_to do |format|
-      if @track.update(track_params)
-        format.html { redirect_to @track, notice: 'Track was successfully updated.' }
-        format.json { render :show, status: :ok, location: @track }
-      else
-        format.html { render :edit }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
+    if @track.update(track_params)
+      render json: @track
+    else
+      render json: @track.errors
     end
   end
 
@@ -59,13 +53,17 @@ class Api::TracksController < ApplicationController
   # DELETE /tracks/1.json
   def destroy
     @track.destroy
+<<<<<<< HEAD
     respond_to do |format|
       format.json { head :no_content }
     end
+=======
+    head :no_content
+>>>>>>> development
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def get_client
       @client = Soundcloud.new(client_id: 'YOUR_CLIENT_ID') # current user?
     end
@@ -74,7 +72,10 @@ class Api::TracksController < ApplicationController
       @track = @client.get(params[:id])
     end
 
+<<<<<<< HEAD
     # Never trust parameters from the scary internet, only allow the white list through.
+=======
+>>>>>>> development
     def track_params
       params.require(:track).permit(:username, :url, :title, :artist, :box)
     end
