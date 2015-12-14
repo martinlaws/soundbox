@@ -31,19 +31,15 @@ $().ready(function() {
 
     });
   }
-  
+
   setInterval(addButton, 1000);
-
-
-
-
 
   // for buttons on individual tracks
 
   // function addIndividualButton() {
   //   $('.compactTrackListItem__content').not('.appended').addClass('appended').prepend($soundBoxButton);
   // }
-  
+
   // setInterval(addIndividualButton, 1000);
 
   // function findPlayedTrackData() {
