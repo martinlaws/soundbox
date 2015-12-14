@@ -7,11 +7,16 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     redirect_to '/'
   end
+  #
+  # protected
+  #
+  # def auth_hash
+  #   request.env['omniauth.auth']
+  # end
 
-  protected
-
-  def auth_hash
-    request.env['omniauth.auth']
-  end
+  # def create
+  #   session[:user_id] = 2
+  #   redirect :'/'
+  # end
 
 end
