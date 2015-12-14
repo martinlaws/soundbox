@@ -30,18 +30,15 @@ class Api::TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
-byebug
+    byebug
     @track = Track.new(track_params)
 
-    respond_to do |format|
-      if @track.save
-        format.html { redirect_to @track, notice: 'Track was successfully created.' }
-        format.json { render :show, status: :created, location: @track }
-      else
-        format.html { render :new }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
+    if @track.save
+      render json: @track
+    else
+      puts @track.errors
     end
+
   end
 
   # PATCH/PUT /tracks/1
@@ -63,7 +60,6 @@ byebug
   def destroy
     @track.destroy
     respond_to do |format|
-      format.html { redirect_to tracks_url, notice: 'Track was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -79,12 +75,8 @@ byebug
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    # def track_params
-    #   params.require(:track).permit(:url, :box)
-    # end
-
     def track_params
-      params.require(:track).permit(:url, :title, :artist, :box)
+      params.require(:track).permit(:username, :url, :title, :artist, :box)
     end
 
     def query_params
