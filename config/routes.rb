@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'splash#splash'
 
   # Routes for Sessions and Authentication
-  resources :sessions, only: [:create, :destroy]
-    get '/auth/:provider/callback', to: 'sessions#create'
+  resources :sessions, only: [:create, :new, :destroy]
+  get '/auth/:provider/callback', to: 'sessions#create'
 
   # Routes for Users, with nested boxes => tracks
   resources :users, except: [:index] do
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-  
+
   # Routes for API calls from Google Chrome Extension
   namespace :api do
     # resources :users, only: [:create, :update]
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       post '/users/:id/boxes/:box_id', to: '/api/users#update'
       post 'boxes/:box_id/tracks', to: '/api/users#create'
     end
-    resources :tracks, only: [:create, :update] 
+    resources :tracks, only: [:create, :update]
   end
 
 end

@@ -1,31 +1,6 @@
 class Api::TracksController < ApplicationController
   before_action :get_client
-  before_action :set_track, only: [:show, :edit, :update, :destroy]
-
-  # GET /tracks
-  # GET /tracks.json
-  def index
-    @tracks = @client.get('/tracks', :limit => 10, :order => 'hotness')
-    if query_params
-      @tracks = @client.get('/tracks', query_params)
-    end
-  end
-
-  # GET /tracks/1
-  # GET /tracks/1.json
-  def show
-    render json: @track
-  end
-
-  # GET /tracks/new
-  def new
-    @track = Track.new
-  end
-
-  # GET /tracks/1/edit
-  def edit
-    @track = Track.find(params[:id])
-  end
+  before_action :set_track
 
   # POST /tracks
   # POST /tracks.json
@@ -39,29 +14,49 @@ class Api::TracksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tracks/1
-  # PATCH/PUT /tracks/1.json
-  def update
-    if @track.update(track_params)
-      render json: @track
-    else
-      render json: @track.errors
-    end
-  end
+  # # GET /tracks
+  # # GET /tracks.json
+  # def index
+  #   @tracks = @client.get('/tracks', :limit => 10, :order => 'hotness')
+  #   if query_params
+  #     @tracks = @client.get('/tracks', query_params)
+  #   end
+  # end
+  #
+  # # GET /tracks/1
+  # # GET /tracks/1.json
+  # def show
+  #   render json: @track
+  # end
+  #
+  # # GET /tracks/new
+  # def new
+  #   @track = Track.new
+  # end
+  #
+  # # GET /tracks/1/edit
+  # def edit
+  #   @track = Track.find(params[:id])
+  # end
 
-  # DELETE /tracks/1
-  # DELETE /tracks/1.json
-  def destroy
-    @track.destroy
-<<<<<<< HEAD
-    respond_to do |format|
-      format.json { head :no_content }
-    end
-=======
-    head :no_content
->>>>>>> development
-  end
 
+
+  # # PATCH/PUT /tracks/1
+  # # PATCH/PUT /tracks/1.json
+  # def update
+  #   if @track.update(track_params)
+  #     render json: @track
+  #   else
+  #     render json: @track.errors
+  #   end
+  # end
+  #
+  # # DELETE /tracks/1
+  # # DELETE /tracks/1.json
+  # def destroy
+  #   @track.destroy
+  # end
+  #
   private
 
     def get_client
@@ -72,15 +67,11 @@ class Api::TracksController < ApplicationController
       @track = @client.get(params[:id])
     end
 
-<<<<<<< HEAD
-    # Never trust parameters from the scary internet, only allow the white list through.
-=======
->>>>>>> development
     def track_params
       params.require(:track).permit(:username, :url, :title, :artist, :box)
     end
-
-    def query_params
-
-    end
+  #
+  #   def query_params
+  #
+  #   end
 end

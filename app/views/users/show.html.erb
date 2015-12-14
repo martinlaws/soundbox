@@ -2,7 +2,18 @@
 
 <div class="container">
   <div class="row">
-    <p><strong>Welcome back, </strong><%= @user.username %></p>
+    <div class="eight columns">
+      <p><strong>Welcome back, </strong><%= @user.username %></p>
+    </div>
+    <% @user.boxes.each do |box| %>
+    <div class ="row">
+      <h5><%= box.name %></h5>
+    <% box.tracks.each do |track| %>
+      <%= track.title %>
+      <a href="<%= track.url %>">link</a>
+    <% end %>
+    </div>
+    <% end %>
   </div>
 
   <div class="row">

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 #     users   POST    /users(.:format)            users#create
 #  new_user   GET     /users/new(.:format)        users#new
@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 #             DELETE  /users/:id(.:format)        users#destroy
 
   def show
-    # render :'/users/:id/show'
+    @user = User.find(2)
+    render :'/users/show'
   end
 
   def new
