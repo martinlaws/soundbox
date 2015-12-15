@@ -23,3 +23,7 @@
 #Ignore node_modules
 /extension_app/node_modules/*
 /.DS_Store
+/node_modules
+
+#Ignore byebug.history
+.byebug_history

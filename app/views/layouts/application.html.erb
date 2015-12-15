@@ -5,20 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= google_webfonts_init({
-    google: ['Roboto']
-  }) %>
+  <link href='https://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="row">
     <nav id="main-nav">
-      <button class="button-primary">Log in</button>
-      <button class="button-primary">Sign up</button>
-      <button class="button-primary">My Boxes</button>
+      <% if session[:id] == 0 %>
+        <button class="button-primary" href="/">Log in</button>
+        <button class="button-primary">Sign up</button>
+        <button class="button-primary">My Boxes</button>
+      <% else %>
+        <h5>You're logged in!</h5>
+      <% end %>
     </nav>
   </div>
-<%= yield %>
 
+  <div class="container">
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+    
+    <%= yield %>
+  </div>
 <% console %>
 </body>
 </html>
