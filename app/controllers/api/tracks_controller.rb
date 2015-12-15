@@ -10,7 +10,7 @@ class Api::TracksController < ApplicationController
     @track = Track.new(track_params)
     @track.box_id = @track.box_id || -1
 
-    
+
 
     if @track.save
       render json: @track
@@ -80,7 +80,7 @@ class Api::TracksController < ApplicationController
     # end
 
     def track_params
-      params.require(:track).permit(:username, :url, :title, :artist, :box_id)
+      params.require(:track).permit(:username, :url, :track_info, :box_id)
     end
 
     # def query_params

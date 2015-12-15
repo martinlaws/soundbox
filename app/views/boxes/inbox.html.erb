@@ -10,8 +10,7 @@
 <table>
   <tr>
     <th>Track ID</th>
-    <th>Title</th>
-    <th>Artist</th>
+    <th>Track Info</th>
     <th>Created at:</th>
     <th>Updated at:</th>
     <th>Actions</th>
@@ -19,8 +18,7 @@
   <% @box.each do |track| %>
   <tr>
       <td><%= track.id %></td>
-      <td><a href="<%= track.url %>"><%= track.title %></a></td>
-      <td><%= track.artist %></td>
+      <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
       <td><%= track.created_at %></td>
       <td><%= track.updated_at %></td>
       <td><%= link_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>

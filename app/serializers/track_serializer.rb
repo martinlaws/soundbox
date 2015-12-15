@@ -1,6 +1,6 @@
 class TrackSerializer < ActiveModel::Serializer
 
-  attributes :url, :title, :artist
+  attributes :url, :track_info
 
   # attributes :id, :url
 
