@@ -9,7 +9,7 @@
 
 <table>
   <tr>
-    <th>Track ID</th>
+    <th> - </th>
     <th>Track Info</th>
     <th>Created at:</th>
     <th>Updated at:</th>
@@ -17,11 +17,14 @@
   </tr>
   <% @box.each do |track| %>
   <tr>
-      <td><%= track.id %></td>
+      <td><form class="play" id="<%=track.url%>"><input type="button" value="play"></form></td>
       <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
       <td><%= track.created_at %></td>
       <td><%= track.updated_at %></td>
       <td><%= link_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>
   </tr>
   <% end %>
+
 </table>
+
+<%= render "shared/player" %>

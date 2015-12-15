@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function(){
+
+  $('.play').on('click', function(event){
+    event.preventDefault();
+    var widget = SC.Widget('player');
+    widget.load(this.id, {
+      auto_play: true
+    });
+    widget.bind(SC.Widget.Events.FINISH, function() {
+      // play the next song
+    });
+  });
+
+});

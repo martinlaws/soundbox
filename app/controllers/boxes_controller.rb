@@ -1,4 +1,5 @@
 class BoxesController < ApplicationController
+
   before_action :require_user
 
   def show

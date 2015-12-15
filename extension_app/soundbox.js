@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     chrome.tabs.query({url: "https://soundcloud.com/*"}, function(tab) {
       $('form').append('<p>' + tab[0].url + '</p>');
+      console.log(tab[0].url);
       return tab[0].url;
     });
 
