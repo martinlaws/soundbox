@@ -24,3 +24,20 @@
   float: right;
   margin: 0 1px;
 }
+
+h3.box-title {
+  font-family: 'La Belle Aurore', serif;
+}
+
+h3.box-title a {
+  text-decoration: none;
+}
+
+#player {
+  visibility: hidden;
+  clear: both;
+}
+
+#player.visible {
+  visibility: visible;
+}

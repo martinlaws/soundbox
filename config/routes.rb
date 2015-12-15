@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   root 'splash#splash'
+  get 'users/:id/boxes/inbox', to: 'boxes#inbox'
+  delete 'track/:id', to: 'boxes#inbox_track_destroy'
 
   # Routes for Sessions and Authentication
-  resources :sessions, only: [:create, :destroy]
-    get '/auth/:provider/callback', to: 'sessions#create'
+  resources :sessions, only: [:create, :new, :destroy]
+  get '/auth/:provider/callback', to: 'sessions#create'
 
   # Routes for Users, with nested boxes => tracks
   resources :users, except: [:index] do
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
       post '/users/:id/boxes/:box_id', to: '/api/users#update'
       post 'boxes/:box_id/tracks', to: '/api/users#create'
     end
-    resources :tracks, only: [:create, :update] 
+    resources :tracks, only: [:create, :update]
   end
 
 end
