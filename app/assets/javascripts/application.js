@@ -24,6 +24,7 @@ $(function(){
     widget.load(this.id, {
       auto_play: true
     });
+    $('#player').addClass("visible");
     widget.bind(SC.Widget.Events.FINISH, function() {
       // play the next song
     });
