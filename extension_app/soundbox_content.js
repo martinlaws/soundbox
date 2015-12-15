@@ -12,8 +12,8 @@ $().ready(function() {
       var trackURL = $(this).children('a').prop('href');
       // not all title/artist separated by hyphen!
       var trackInfo = $(this).find('span.sc-artwork').attr('aria-label').split("-");
-      var trackTitle = trackInfo[0];
-      var trackArtist = trackInfo[1];
+      var trackArtist = trackInfo[0];
+      var trackTitle = trackInfo[1];
 
       trackData["username"] = userName;
       trackData["url"] = trackURL;
