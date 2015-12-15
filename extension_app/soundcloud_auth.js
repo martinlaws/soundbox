@@ -1,2 +1,1 @@
-console.log("here");
-chrome.runtime.sendMessage({action: 'cookie'});
+chrome.runtime.sendMessage({action: 'auth'});

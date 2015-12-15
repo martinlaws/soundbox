@@ -3,17 +3,18 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
 
-  before_action :show_cookie
-
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   protected
 
-  def show_cookie
-    puts "Auth token"
-    puts request.headers["HTTP_AUTHORIZATION"]
+  def require_user
+    if request.headers["HTTP_AUTHORIZATION"]
+      @current_user = User.find_by(uid: request.headers["HTTP_AUTHORIZATION"])
+    else
+      @current_user = User.find(session[:user_id])
+    end
   end
 
   # before_action :set_account, :authenticate

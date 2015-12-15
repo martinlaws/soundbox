@@ -1,4 +1,6 @@
 class Api::TracksController < ApplicationController
+
+  before_action :require_user
   before_action :get_client
   before_action :set_track, only: [:show, :edit, :update, :destroy]
 
