@@ -10,7 +10,11 @@
 <table>
   <tr>
     <th>Track ID</th>
+<<<<<<< HEAD
     <th>Info</th>
+=======
+    <th>Track Info</th>
+>>>>>>> 652fc4cd8f74b3f01691feaee0a591e57974706f
     <th>Created at:</th>
     <th>Updated at:</th>
     <th>Actions</th>
@@ -19,7 +23,10 @@
   <tr>
       <td><%= track.id %></td>
       <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
+<<<<<<< HEAD
       <td><%= track.artist %></td>
+=======
+>>>>>>> 652fc4cd8f74b3f01691feaee0a591e57974706f
       <td><%= track.created_at %></td>
       <td><%= track.updated_at %></td>
       <td><%= link_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>

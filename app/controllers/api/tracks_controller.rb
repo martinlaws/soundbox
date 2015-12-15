@@ -22,6 +22,11 @@ class Api::TracksController < ApplicationController
     @track = Track.new(track_params)
     @track.box_id = @track.box_id || -1
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 652fc4cd8f74b3f01691feaee0a591e57974706f
     if @track.save
       render json: @track
     else
@@ -39,7 +44,7 @@ class Api::TracksController < ApplicationController
   private
 
     def track_params
-      params.require(:track).permit(:username, :url, :title, :artist, :box_id)
+      params.require(:track).permit(:username, :url, :track_info, :box_id)
     end
 
 end
