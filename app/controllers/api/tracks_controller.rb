@@ -6,6 +6,7 @@ class Api::TracksController < ApplicationController
   # POST /tracks.json
   def create
     @track = Track.new(track_params)
+    @track.box_id = @track.box_id || -1
 
     if @track.save
       render json: @track
@@ -76,7 +77,7 @@ class Api::TracksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def track_params
-      params.require(:track).permit(:username, :url, :title, :artist, :box)
+      params.require(:track).permit(:username, :url, :title, :artist, :box_id)
     end
 
     def query_params

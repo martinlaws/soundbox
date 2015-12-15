@@ -5,7 +5,7 @@ class BoxesController < ApplicationController
   end
 
   def inbox
-    @box = Track.where(username: current_user.username, box_id: nil)
+    @box = Track.where(username: current_user.username, box_id: -1)
     render :'/boxes/inbox'
   end
 
