@@ -1,6 +1,6 @@
 class Api::TracksController < ApplicationController
-  before_action :get_client
-  before_action :set_track
+  # before_action :get_client
+  # before_action :set_track
 
   # POST /tracks
   # POST /tracks.json
