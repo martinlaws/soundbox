@@ -9,15 +9,10 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 
-  #
-  # protected
-  #
-  # def auth_hash
-  #   request.env['omniauth.auth']
-  # end
+  protected
 
-  # def create
-  #   session[:user_id] = 2
-  #   redirect :'/'
-  # end
+  def auth_hash
+    request.env['omniauth.auth']
+  end
+
 end
