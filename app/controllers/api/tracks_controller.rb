@@ -1,4 +1,6 @@
 class Api::TracksController < ApplicationController
+
+  before_action :require_user
   before_action :get_client
   before_action :set_track, only: [:show, :edit, :update, :destroy]
 
@@ -68,7 +70,6 @@ class Api::TracksController < ApplicationController
       @track = @client.get(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def track_params
       params.require(:track).permit(:username, :url, :title, :artist, :box)
     end
