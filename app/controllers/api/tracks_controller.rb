@@ -48,6 +48,7 @@ class Api::TracksController < ApplicationController
   # DELETE /tracks/1.json
   def destroy
     @track.destroy
+
     respond_to do |format|
       format.json { head :no_content }
     end
@@ -79,6 +80,7 @@ class Api::TracksController < ApplicationController
     #   @track = @client.get(params[:id])
     # end
 
+    # Never trust parameters from the scary internet, only allow the white list through.
     def track_params
       params.require(:track).permit(:username, :url, :track_info, :box_id)
     end

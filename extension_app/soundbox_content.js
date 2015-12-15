@@ -4,6 +4,7 @@ $().ready(function() {
   var boxIcon = chrome.extension.getURL("box.png");
 
   var $soundBoxButton = $('<button class="icon-button"><img class="icon" title="Add to Soundbox" src="' + boxIcon + '" /></button>');
+  $('body').prepend($('<div class="notification">You\'ve successfully added a track to SoundBox!</div>'));
 
   function addButton() {
     $('.sound__artwork').not('.appended').addClass('appended').append($soundBoxButton).on('click', function() {
@@ -23,6 +24,7 @@ $().ready(function() {
         url: 'http://localhost:3000/api/tracks',
         data: {track: trackData}
       }, function(response) {
+        $('.notification').slideDown('slow').delay(1500).slideUp('slow');
         console.log(response);
         /*Callback function to deal with the response*/
       });

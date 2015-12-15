@@ -1,3 +1,4 @@
+// maybe this section only needs to run on install then you can take it out?
 chrome.runtime.onInstalled.addListener(function() {
  // Replace all rules ...
  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
@@ -41,7 +42,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
 
           xhttp.setRequestHeader("AUTHORIZATION", cookie.value);
           xhttp.send(JSON.stringify(request.data.track));
-          
+
         });
         break;
 
@@ -52,4 +53,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
           }
         });
     }
+    return true;
+
 });
