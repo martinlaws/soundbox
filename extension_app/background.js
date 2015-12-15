@@ -18,8 +18,8 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.runtime.onMessage.addListener(function(request, sender, callback) {
     if(request.action === 'xhttp') {
-      chrome.cookies.get({ "url": 'http://localhost:3000', "name": 'auth_token'}, function(cookie) {
-        console.log(cookie)
+      // chrome.cookies.get({ "url": 'http://localhost:3000', "name": 'auth_token'}, function(cookie) {
+      //   console.log(cookie)
         var xhttp = new XMLHttpRequest();
         var method = request.method ? request.method.toUpperCase() : 'GET';
 
@@ -38,7 +38,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
           xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         }
 
-        xhttp.setRequestHeader("AUTHORIZATION", cookie.value);
+        // xhttp.setRequestHeader("AUTHORIZATION", cookie.value);
         xhttp.send(JSON.stringify(request.data.track));
         return true;
       });

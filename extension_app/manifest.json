@@ -16,19 +16,20 @@
     "tabs",
     "activeTab",
     "declarativeContent",
-    "https://soundcloud.com/*",
-    "http://localhost:3000/*",
-    "cookies"
+    "https://soundcloud.com/*"
+    // "http://localhost:3000/*",
+    // "cookies"
   ],
   "content_scripts": [
     {
       "run_at": "document_end",
       "matches": ["https://soundcloud.com/*"],
       "css": ["soundbox.css"],
-      "js": ["jquery-2.1.4.js", "popup_app.js", "soundbox_content.js", "soundcloud_auth.js"]
+      "js": ["jquery-2.1.4.js", "popup_app.js", "soundbox_content.js"]
     }
   ],
   "web_accessible_resources": [
     "box.png"
   ]
 }
+// , "soundcloud_auth.js"
