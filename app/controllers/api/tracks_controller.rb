@@ -53,13 +53,11 @@ class Api::TracksController < ApplicationController
   # DELETE /tracks/1.json
   def destroy
     @track.destroy
-<<<<<<< HEAD
+
     respond_to do |format|
       format.json { head :no_content }
     end
-=======
-    head :no_content
->>>>>>> development
+
   end
 
   private
@@ -72,10 +70,7 @@ class Api::TracksController < ApplicationController
       @track = @client.get(params[:id])
     end
 
-<<<<<<< HEAD
     # Never trust parameters from the scary internet, only allow the white list through.
-=======
->>>>>>> development
     def track_params
       params.require(:track).permit(:username, :url, :title, :artist, :box)
     end

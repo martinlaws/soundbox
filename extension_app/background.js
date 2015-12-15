@@ -1,3 +1,4 @@
+// maybe this section only needs to run on install then you can take it out?
 chrome.runtime.onInstalled.addListener(function() {
  // Replace all rules ...
  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
