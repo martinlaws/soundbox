@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 #             DELETE  /users/:id(.:format)        users#destroy
 
   def show
-    @user = User.find(2)
+    @user = User.find(params[:id])
     render :'/users/show'
   end
 

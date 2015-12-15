@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root 'splash#splash'
+  get 'users/:id/boxes/inbox', to: 'boxes#inbox'
+
 
   # Routes for Sessions and Authentication
   resources :sessions, only: [:create, :new, :destroy]

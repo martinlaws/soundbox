@@ -5,15 +5,16 @@
     <div class="eight columns">
       <p><strong>Welcome back, </strong><%= @user.username %></p>
     </div>
-    <% @user.boxes.each do |box| %>
-    <div class ="row">
-      <h5><%= box.name %></h5>
-    <% box.tracks.each do |track| %>
-      <%= track.title %>
-      <a href="<%= track.url %>">link</a>
-    <% end %>
-    </div>
-    <% end %>
+  </div>
+  <div class ="row">
+  <% @user.boxes.each do |box| %>
+  <div class="three columns">
+    <h3 class="box-title"><a href="/users/<%=@user.id%>/boxes/<%= box.id %>"><%= box.name %></a></h3>
+  </div>
+  <% end %>
+  <div class="three columns">
+    <h3 class="box-title"><a href="/users/<%=@user.id%>/boxes/inbox">Inbox</a></h3>
+  </div>
   </div>
 
   <div class="row">

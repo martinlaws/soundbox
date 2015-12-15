@@ -5,9 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= google_webfonts_init({
-    google: ['Roboto']
-  }) %>
+  <link href='https://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="row">
@@ -21,8 +19,10 @@
       <% end %>
     </nav>
   </div>
-<%= yield %>
 
+  <div class="container">
+    <%= yield %>
+  </div>
 <% console %>
 </body>
 </html>
