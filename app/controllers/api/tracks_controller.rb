@@ -22,11 +22,6 @@ class Api::TracksController < ApplicationController
     @track = Track.new(track_params)
     @track.box_id = @track.box_id || -1
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 652fc4cd8f74b3f01691feaee0a591e57974706f
     if @track.save
       render json: @track
     else
