@@ -1,28 +1,29 @@
-<h3 class="box-title">Inbox</h3>
+<div class="container">
+  <h3 class="box-title">Inbox</h3>
 
-<p>
-  <strong>User:</strong>
-  <%= @current_user.username %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @current_user.username %>
+  </p>
 
-<table>
-  <tr>
-    <th> - </th>
-    <th>Track Info</th>
-    <th>Created at:</th>
-    <th>Updated at:</th>
-    <th>Actions</th>
-  </tr>
-  <% @box.each do |track| %>
-  <tr>
-      <td><form class="play" id="<%=track.url%>"><input type="button" value="play"></form></td>
-      <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
-      <td><%= track.created_at %></td>
-      <td><%= track.updated_at %></td>
-      <td><%= link_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>
-  </tr>
-  <% end %>
+  <table>
+    <tr>
+      <th></th>
+      <th>Track Info</th>
+      <th>Created at:</th>
+      <th>Updated at:</th>
+      <th>Actions</th>
+    </tr>
+    <% @box.each do |track| %>
+    <tr>
+        <td><form class="play" id="<%=track.url%>"><input type="button" value="play"></form></td>
+        <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
+        <td><%= track.created_at %></td>
+        <td><%= track.updated_at %></td>
+        <td><%= link_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>
+    </tr>
+    <% end %>
 
-</table>
-
+  </table>
+</div>
 <%= render "shared/player" %>
