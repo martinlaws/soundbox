@@ -33,11 +33,13 @@ h3.box-title a {
   text-decoration: none;
 }
 
-#player {
+#player-footer {
   visibility: hidden;
   clear: both;
+  position: fixed;
+  width: 100%;
 }
 
-#player.visible {
+#player-footer.visible {
   visibility: visible;
 }
