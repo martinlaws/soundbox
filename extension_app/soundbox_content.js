@@ -26,8 +26,6 @@ $().ready(function() {
       }, function(response) {
         $('.notification').slideDown('slow').delay(1500).slideUp('slow');
         console.log(response);
-        console.log(response.track.title + " was added to SoundBox!");
-        // {"track":{"url":"https://soundcloud.com/kompakt/sets/3-channels-speicher-88","title":"3 Channels","artist":"Speicher 88"}}
         /*Callback function to deal with the response*/
       });
 

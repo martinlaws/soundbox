@@ -42,7 +42,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
 
           xhttp.setRequestHeader("AUTHORIZATION", cookie.value);
           xhttp.send(JSON.stringify(request.data.track));
-          
+
         });
         break;
 
@@ -53,4 +53,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
           }
         });
     }
+    return true;
+
 });
