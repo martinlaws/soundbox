@@ -15,7 +15,7 @@
     <th>Updated at:</th>
     <th>Actions</th>
   </tr>
-  <% @box.each do |track| %>
+  <% @box.each_with_index do |track, index| %>
   <tr>
       <td><form class="play" id="<%=track.url%>"><input type="button" value="play"></form></td>
       <td><a href="<%= track.url %>"><%= track.track_info %></a></td>

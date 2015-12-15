@@ -21,6 +21,7 @@ $(function(){
   $('.play').on('click', function(event){
     event.preventDefault();
     var widget = SC.Widget('player');
+    debugger;
     widget.load(this.id, {
       auto_play: true
     });
