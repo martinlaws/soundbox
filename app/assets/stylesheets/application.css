@@ -32,3 +32,12 @@ h3.box-title {
 h3.box-title a {
   text-decoration: none;
 }
+
+#player {
+  visibility: hidden;
+  clear: both;
+}
+
+#player.visible {
+  visibility: visible;
+}
