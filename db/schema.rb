@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214182022) do
+ActiveRecord::Schema.define(version: 20151215175609) do
 
   create_table "boxes", force: :cascade do |t|
     t.string   "name"
@@ -38,9 +38,8 @@ ActiveRecord::Schema.define(version: 20151214182022) do
     t.integer  "box_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "title"
-    t.string   "artist"
     t.string   "username"
+    t.string   "track_info"
   end
 
   create_table "users", force: :cascade do |t|

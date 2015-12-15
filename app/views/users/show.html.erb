@@ -2,7 +2,19 @@
 
 <div class="container">
   <div class="row">
-    <p><strong>Welcome back, </strong><%= @user.username %></p>
+    <div class="eight columns">
+      <p><strong>Welcome back, </strong><%= @user.username %></p>
+    </div>
+  </div>
+  <div class ="row">
+  <% @user.boxes.each do |box| %>
+  <div class="three columns">
+    <h3 class="box-title"><a href="/users/<%=@user.id%>/boxes/<%= box.id %>"><%= box.name %></a></h3>
+  </div>
+  <% end %>
+  <div class="three columns">
+    <h3 class="box-title"><a href="/users/<%=@user.id%>/boxes/inbox">Inbox</a></h3>
+  </div>
   </div>
 
   <div class="row">
