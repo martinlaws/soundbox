@@ -1,11 +1,14 @@
 class BoxesController < ApplicationController
+
+  before_action :require_user
+
   def show
     @box = Box.find(params[:id])
     render :'/boxes/show'
   end
 
   def inbox
-    @box = Track.where(username: current_user.username, box_id: -1)
+    @box = Track.where(username: @current_user.username, box_id: -1)
     render :'/boxes/inbox'
   end
 

@@ -21,7 +21,6 @@ class Api::TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     @track.box_id = @track.box_id || -1
-
     if @track.save
       render json: @track
     else
