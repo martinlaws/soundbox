@@ -16,6 +16,6 @@ class BoxesController < ApplicationController
     else
       flash[:error] = "The track wasn't able to be deleted!"
     end
-    render :'/boxes/inbox'
+    redirect_to :back
   end
 end
