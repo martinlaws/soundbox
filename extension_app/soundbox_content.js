@@ -11,14 +11,11 @@ $().ready(function() {
       var userName = $('.userNav__username').text();
       var trackURL = $(this).children('a').prop('href');
       // not all title/artist separated by hyphen!
-      var trackInfo = $(this).find('span.sc-artwork').attr('aria-label').split("-");
-      var trackTitle = trackInfo[0];
-      var trackArtist = trackInfo[1];
+      var trackInfo = $(this).find('span.sc-artwork').attr('aria-label');
 
       trackData["username"] = userName;
       trackData["url"] = trackURL;
-      trackData["title"] = trackTitle.replace(/\s+/g, ' ').trim();
-      trackData["artist"] = trackArtist.replace(/\s+/g, ' ').trim();
+      trackData["track_info"] = trackInfo;
 
       chrome.runtime.sendMessage({
         method: 'POST',

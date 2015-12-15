@@ -8,6 +8,16 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id])
   end
 
+  protected
+
+  def require_user
+    if request.headers["HTTP_AUTHORIZATION"]
+      @current_user = User.find_by(uid: request.headers["HTTP_AUTHORIZATION"])
+    else
+      @current_user = User.find(session[:user_id])
+    end
+  end
+
   # before_action :set_account, :authenticate
 
   # protected

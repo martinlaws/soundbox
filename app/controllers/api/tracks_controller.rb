@@ -1,6 +1,8 @@
 class Api::TracksController < ApplicationController
+
+  before_action :require_user
   # before_action :get_client
-  # before_action :set_track
+  # before_action :set_track, only: [:show, :edit, :update, :destroy]
 
   # POST /tracks
   # POST /tracks.json
@@ -64,23 +66,22 @@ class Api::TracksController < ApplicationController
   # def destroy
   #   @track.destroy
   # end
-  #
+
   private
 
-    def get_client
-      @client = Soundcloud.new(client_id: 'YOUR_CLIENT_ID') # current user?
-    end
+    # def get_client
+    #   @client = Soundcloud.new(client_id: 'YOUR_CLIENT_ID') # current user?
+    # end
+    #
+    # def set_track
+    #   @track = @client.get(params[:id])
+    # end
 
-    def set_track
-      @track = @client.get(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def track_params
       params.require(:track).permit(:username, :url, :title, :artist, :box_id)
     end
 
-    def query_params
-
-    end
+    # def query_params
+    #
+    # end
 end
