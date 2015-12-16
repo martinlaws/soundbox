@@ -16,8 +16,6 @@
 !/log/.keep
 /tmp
 
-# Ignore secrets, duh!
-/config/secrets.yml
 /.env
 
 #Ignore node_modules
