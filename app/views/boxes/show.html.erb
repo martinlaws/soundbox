@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Url:</strong>
-  <%= @box.url %>
-</p>
+  <h3 class="box-title"><%= @box.name %></h3>
 
-<p>
-  <strong>User:</strong>
-  <%= @box.user_id %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @current_user.username %>
+  </p>
 
-<%= link_to 'Edit', edit_box_path(@box) %> |
-<%= link_to 'Back', boxes_path %>
+  <table>
+    <tr>
+      <th></th>
+      <th>Track Info</th>
+      <th>Created at:</th>
+      <th>Updated at:</th>
+    </tr>
+    <% @box.tracks.each do |track| %>
+    <tr>
+        <td><form class="play" id="<%=track.url%>"><input type="button" value="play"></form></td>
+        <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
+        <td><%= track.created_at %></td>
+        <td><%= track.updated_at %></td>
+    </tr>
+    <% end %>
+
+  </table>
+</div>
+<%= render "shared/player" %>

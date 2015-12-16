@@ -1,0 +1,49 @@
+<div class="container">
+  <h3 class="box-title">Inbox</h3>
+
+  <p>
+    <strong>User:</strong>
+    <%= @current_user.username %>
+  </p>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>Track Info</th>
+      <th>Actions</th>
+      <th>Share</th>
+      <th>Add to a Box</th>
+    </tr>
+    <% @box.each do |track| %>
+    <tr>
+        <td>
+          <%= link_to "", class: "play", id: track.url do %>
+            <i class="material-icons">play_circle_filled</i>
+          <% end %>
+        </td>
+        <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
+        <td>
+          <%= link_to "/track/#{track.id}", method: 'delete' do %>
+            <i class="material-icons">highlight_off</i>
+          <% end %>
+        </td>
+        <td><button class='button'>Share</button></td>
+        <td>
+          <form action="/inbox/<%=track.id%>" method="post">
+            <select name="box_id">
+              <%= @boxes.each do |box| %>
+              <option value="<%= box.id %>">
+                <%= box.name %>
+              </option>
+              <% end %>
+            </select>
+            <button type="submit"><i class="material-icons">highlight_off</i></button>
+          </form>
+        </td>
+    </tr>
+    <% end %>
+
+  </table>
+</div>
+
+<footer id="player-footer"><%= render "shared/player" %></footer>
