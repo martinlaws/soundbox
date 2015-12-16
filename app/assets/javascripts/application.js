@@ -30,4 +30,29 @@ $(function(){
     });
   });
 
+  $('.share').on('submit', function(event) {
+    // var result = $('#1').serialize();
+
+    userName = $(this).find('.username').val();
+    trackURL = this.id.split('`')[0];
+    trackInfo = this.id.split('`')[1];
+
+    trackData = {};
+
+    trackData["username"] = userName;
+    trackData["url"] = trackURL;
+    trackData["track_info"] = trackInfo;
+
+    $.ajax({
+      method: 'POST',
+      action: 'xhttp',
+      url: 'http://localhost:3000/api/tracks',
+      data: {track: trackData}
+    }, function(response) {
+      $('.notification').slideDown('slow').delay(1500).slideUp('slow');
+      console.log(response);
+      /*Callback function to deal with the response*/
+    });
+    debugger;
+  });
 });
