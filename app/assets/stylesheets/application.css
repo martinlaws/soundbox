@@ -32,6 +32,7 @@ body {
 h3.box-title {
   font-family: 'La Belle Aurore', serif;
   color: #C1CDCA;
+  text-transform: lowercase;
 }
 
 h3.box-title a {
@@ -55,3 +56,7 @@ i {
   text-decoration: none !important;
 }
 
+.small-icon {
+  border: none;
+  cursor: pointer;
+}

@@ -2,6 +2,14 @@ class BoxesController < ApplicationController
 
   before_action :require_user
 
+  def new
+    @box = Box.new
+  end
+
+  def create
+    @box = Box.new(box_params)
+  end
+
   def show
     @box = Box.find(params[:id])
     render :'/boxes/show'
@@ -30,4 +38,11 @@ class BoxesController < ApplicationController
     end
     redirect_to :back
   end
+
+  private
+
+  def box_params
+    params.require(:box).permit(:username, :url, :box_id)
+  end
+
 end
