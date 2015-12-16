@@ -20,7 +20,7 @@
         <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
         <td><%= track.created_at %></td>
         <td><%= track.updated_at %></td>
-        <td><%= link_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>
+        <td><%= button_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>
     </tr>
     <% end %>
 
