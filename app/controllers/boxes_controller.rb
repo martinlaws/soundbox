@@ -17,7 +17,7 @@ class BoxesController < ApplicationController
       flash[:error] = "The box didn't save!"
     end
 
-    redirect_to "/users/#{@current_user.id}/boxes/inbox"
+    redirect_to "/users/#{@current_user.id}/"
   end
 
   def show
