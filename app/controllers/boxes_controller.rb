@@ -7,7 +7,17 @@ class BoxesController < ApplicationController
   end
 
   def create
-    @box = Box.new(box_params)
+    @box = Box.new(name: params[:box][:name])
+    @box.user_id = @current_user.id
+
+    if @box.save
+      flash[:notice] = "You've saved a new box called: #{@box.name}"
+    else
+      binding.pry
+      flash[:error] = "The box didn't save!"
+    end
+
+    redirect_to "/users/#{@current_user.id}/boxes/inbox"
   end
 
   def show
@@ -41,8 +51,8 @@ class BoxesController < ApplicationController
 
   private
 
-  def box_params
-    params.require(:box).permit(:username, :url, :box_id)
-  end
+  # def box_params
+  #   params.require(:box).permit(:box_id)
+  # end
 
 end
