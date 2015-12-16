@@ -5,8 +5,10 @@
 
   <table>
     <tr>
-      <th></th>
-      <th>Track Info</th> 
+      <th>Play</th>
+      <th>Track Info</th>
+      <th>Share</th>
+      <th>Delete</th>
     </tr>
     <% @box.tracks.each do |track| %>
     <tr>
@@ -27,4 +29,5 @@
 
   </table>
 </div>
+
 <footer id="player-footer"><%= render "shared/player" %></footer>

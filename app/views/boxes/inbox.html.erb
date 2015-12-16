@@ -7,6 +7,7 @@
       <th>Track Info</th>
       <th>Actions</th>
       <th>Share</th>
+      <th>Add to a Box</th>
     </tr>
     <% @box.each do |track| %>
     <tr>
@@ -21,7 +22,24 @@
             <i class="material-icons">highlight_off</i>
           <% end %>
         </td>
-        <td><i class="material-icons">send</i></td>
+        <td>
+          <i class="material-icons">send</i>
+          <form id="<%=track.url%>`<%=track.track_info%>" class="share">
+            <input type="submit" value="Send"><input class='username' type="text" name="username" value="Enter a username">
+          </form>
+        </td>
+        <td>
+          <form action="/inbox/<%=track.id%>" method="post">
+            <select name="box_id">
+              <%= @boxes.each do |box| %>
+              <option value="<%= box.id %>">
+                <%= box.name %>
+              </option>
+              <% end %>
+            </select>
+            <button type="submit"><i class="material-icons">highlight_off</i></button>
+          </form>
+        </td>
     </tr>
     <% end %>
 

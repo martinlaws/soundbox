@@ -26,11 +26,11 @@
       "matches": ["https://soundcloud.com/*"],
       "exclude_matches": ["https://soundcloud.com/connect*"],
       "css": ["soundbox.css"],
-      "js": ["jquery-2.1.4.js", "popup_app.js", "soundbox_content.js", "soundcloud_auth.js"]
+      "js": ["jquery-2.1.4.js", "popup_app.js", "soundcloud_auth.js", "soundbox_content.js"]
     }
   ],
   "web_accessible_resources": [
     "box.png"
   ]
 }
-// 
+//
