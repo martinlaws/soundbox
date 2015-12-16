@@ -5,12 +5,14 @@
 
   <table>
     <tr>
-      <th>Play</th>
+      <th></th>
       <th>Track Info</th>
+      <th>Actions</th>
       <th>Share</th>
-      <th>Delete</th>
     </tr>
-    <% @box.tracks.each do |track| %>
+    <% song_list = []  %>
+    <% @box.each do |track| %>
+    <% song_list << track.url  %>
     <tr>
       <td>
         <%= link_to "", class: "play", id: track.url do %>
