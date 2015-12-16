@@ -24,10 +24,49 @@ $(function(){
     widget.load(this.id, {
       auto_play: true
     });
-    $('#player').addClass("visible");
+    $('#player-footer').addClass("visible");
     widget.bind(SC.Widget.Events.FINISH, function() {
       // play the next song
     });
   });
 
+  $('.play_all').on('click', function(event){
+    event.preventDefault();
+    var widget = SC.Widget('player');
+    var song_index = 1;
+    var that = this.id.split('"');
+    widget.load(that[song_index], {
+      auto_play: true
+    });
+    $('#player-footer').addClass("visible");
+    widget.bind(SC.Widget.Events.FINISH, function() {
+      song_index += 2;
+      widget.load(that[song_index], {
+        auto_play: true
+      });
+    });
+  });
+
+  $('.share').on('submit', function(event) {
+
+    userName = $(this).find('.username').val();
+    trackURL = this.id.split('`')[0];
+    trackInfo = this.id.split('`')[1];
+
+    trackData = {};
+    trackData["username"] = userName;
+    trackData["url"] = trackURL;
+    trackData["track_info"] = trackInfo;
+
+    $.ajax({
+      method: 'POST',
+      action: 'xhttp',
+      url: 'http://localhost:3000/api/tracks',
+      data: {track: trackData}
+    }, function(response) {
+      $('.notification').slideDown('slow').delay(1500).slideUp('slow');
+      console.log(response);
+    });
+
+  });
 });

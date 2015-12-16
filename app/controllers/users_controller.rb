@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
 #     users   POST    /users(.:format)            users#create
 #  new_user   GET     /users/new(.:format)        users#new
