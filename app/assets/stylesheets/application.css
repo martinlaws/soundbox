@@ -49,3 +49,7 @@ h3.box-title a {
 #player-footer.visible {
   visibility: visible;
 }
+
+i {
+  text-decoration: none !important;
+}

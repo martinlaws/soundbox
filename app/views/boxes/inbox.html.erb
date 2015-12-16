@@ -10,18 +10,22 @@
     <tr>
       <th></th>
       <th>Track Info</th>
-      <th>Created at:</th>
-      <th>Updated at:</th>
       <th>Actions</th>
       <th>Share</th>
     </tr>
     <% @box.each do |track| %>
     <tr>
-        <td><button class="button play" id="<%=track.url%>">Play</button></td>
+        <td>
+          <%= link_to "", class: "play", id: track.url do %>
+            <i class="material-icons">play_circle_filled</i>
+          <% end %>
+        </td>
         <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
-        <td><%= track.created_at %></td>
-        <td><%= track.updated_at %></td>
-        <td><%= button_to 'Delete', "/track/#{track.id}", :method => 'delete' %></td>
+        <td>
+          <%= link_to "/track/#{track.id}", method: 'delete' do %>
+            <i class="material-icons">highlight_off</i>
+          <% end %>
+        </td>
         <td><button class='button'>Share</button></td>
     </tr>
     <% end %>
