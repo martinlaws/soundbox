@@ -20,13 +20,13 @@
             <i class="material-icons">play_circle_filled</i>
           <% end %>
         </td>
-        <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
+        <td><a class="track-info" href="<%= track.url %>"><%= track.track_info %></a></td>
         <td>
           <%= link_to "/track/#{track.id}", method: 'delete' do %>
             <i class="material-icons">highlight_off</i>
           <% end %>
         </td>
-        <td><button class='button'>Share</button></td>
+        <td><button class='button box-button'>Share</button></td>
     </tr>
     <% end %>
 

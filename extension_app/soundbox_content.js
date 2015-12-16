@@ -7,8 +7,12 @@ $().ready(function() {
   $('body').prepend($('<div class="notification">You\'ve successfully added a track to SoundBox!</div>'));
 
   function addButton() {
-    $('.sound__artwork').not('.appended').addClass('appended').append($soundBoxButton).on('click', function() {
+    var targets = $('.sound__artwork').not('.appended');
+    // console.log( "Expecting multiple targets, got [", targets.length, "] targets.", targets );
+    targets.addClass('appended');
+    targets.append($soundBoxButton);
 
+    targets.on('click', function() {
       var userName = $('.userNav__username').text();
       var trackURL = $(this).children('a').prop('href');
       // not all title/artist separated by hyphen!

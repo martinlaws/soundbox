@@ -17,6 +17,8 @@
 //= require "skeleton"
 
 body {
+  background-color: #607182;
+  color: #C1CDCA;
   padding-bottom: 100px;
 }
 
@@ -31,6 +33,7 @@ body {
 
 h3.box-title {
   font-family: 'La Belle Aurore', serif;
+  color: #C1CDCA;
 }
 
 h3.box-title a {
@@ -53,3 +56,26 @@ h3.box-title a {
 i {
   text-decoration: none !important;
 }
+
+.track-info {
+  font-family: "Gill Sans MT", "Gill Sans", "Gill Sans Std", Verdana, "Bitstream Vera Sans", sans-serif;
+  font-weight: 200;
+  color: #C1CDCA;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+p, th, .material-icons {
+  font-family: "Gill Sans MT", "Gill Sans", "Gill Sans Std", Verdana, "Bitstream Vera Sans", sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #C1CDCA;
+}
+
+#user-button, button.box-button, .button-primary {
+  font-family: "Gill Sans MT", "Gill Sans", "Gill Sans Std", Verdana, "Bitstream Vera Sans", sans-serif;
+  color: #6F8498 !important;
+  background-color: #D7DCDB !important;
+  border: none !important;
+}
+
