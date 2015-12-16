@@ -16,6 +16,10 @@
 
 //= require "skeleton"
 
+body {
+  padding-bottom: 100px;
+}
+
 #main-nav {
   display: block;
 }
@@ -27,17 +31,27 @@
 
 h3.box-title {
   font-family: 'La Belle Aurore', serif;
+  color: #C1CDCA;
 }
 
 h3.box-title a {
   text-decoration: none;
 }
 
-#player {
+#player-footer {
   visibility: hidden;
   clear: both;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin-left: -8px;
 }
 
-#player.visible {
+#player-footer.visible {
   visibility: visible;
 }
+
+i {
+  text-decoration: none !important;
+}
+
