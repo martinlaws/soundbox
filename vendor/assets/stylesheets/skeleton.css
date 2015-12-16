@@ -125,7 +125,6 @@ body {
   line-height: 1.6;
   font-family: "Gill Sans MT", "Gill Sans", "Gill Sans Std", Verdana, "Bitstream Vera Sans", sans-serif;
   font-weight: 200;
-  text-transform: uppercase;
   color: #C1CDCA;
   background-color: #607182;
 }
@@ -139,17 +138,20 @@ body {
 }
 
 p, th, .material-icons {
-  font-family: "Gill Sans MT", "Gill Sans", "Gill Sans Std", Verdana, "Bitstream Vera Sans", sans-serif;
   font-weight: 200;
   text-transform: uppercase;
   color: #C1CDCA;
 }
 
+p {
+  text-transform: lowercase;
+}
 #user-button, button.box-button, .button-primary {
   color: #6F8498;
   background-color: #D7DCDB;
   border: none;
 }
+
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -207,7 +209,7 @@ input[type="button"] {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  border: 1px solid #bbb;
+  border: none;
   cursor: pointer;
   box-sizing: border-box; }
 .button:hover,
