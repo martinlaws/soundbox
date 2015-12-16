@@ -14,14 +14,14 @@
     <tr>
       <td>
         <%= link_to "", class: "play", id: track.url do %>
-          <i class="material-icons">play_circle_filled</i>
+          <i class="material-icons small-icon">play_circle_filled</i>
         <% end %>
       </td>
-      <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
-      <td><i class="material-icons">screen_share</i></td>
+      <td><a class="track-info" href="<%= track.url %>"><%= track.track_info %></a></td>
+      <td><i class="material-icons small-icon">send</i></td>
       <td>
         <%= link_to "/track/#{track.id}", method: 'delete' do %>
-          <i class="material-icons">highlight_off</i>
+          <i class="material-icons small-icon">highlight_off</i>
         <% end %>
       </td>
     </tr>

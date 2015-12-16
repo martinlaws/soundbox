@@ -15,30 +15,31 @@
     <tr>
         <td>
           <%= link_to "", class: "play", id: track.url do %>
-            <i class="material-icons">play_circle_filled</i>
+            <i class="material-icons small-icon">play_circle_filled</i>
           <% end %>
         </td>
         <td><a class="track-info" href="<%= track.url %>"><%= track.track_info %></a></td>
         <td>
           <%= link_to "/track/#{track.id}", method: 'delete' do %>
-            <i class="material-icons">highlight_off</i>
+            <i class="material-icons small-icon">highlight_off</i>
           <% end %>
         </td>
         <td>
           <form id="<%=track.url%>`<%=track.track_info%>" class="share">
-            <input class='username' type="text" name="username" value="Enter a username"><button type="submit"><i class="material-icons">screen_share</i></button>
+            <input class='username' type="text" name="username" value="Enter a username">
+            <button type="submit"><i class="material-icons small-icon">send</i></button>
           </form>
         </td>
         <td>
           <form action="/inbox/<%=track.id%>" method="post">
             <select name="box_id">
               <%= @boxes.each do |box| %>
-              <option value="<%= box.id %>">
-                <%= box.name %>
-              </option>
+                <option value="<%= box.id %>">
+                  <%= box.name %>
+                </option>
               <% end %>
             </select>
-            <button type="submit"><i class="material-icons">highlight_off</i></button>
+            <button class="small-icon" type="submit"><i class="material-icons">library_add</i></button>
           </form>
         </td>
     </tr>
