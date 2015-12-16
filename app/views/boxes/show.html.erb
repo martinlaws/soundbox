@@ -17,7 +17,7 @@
           <i class="material-icons small-icon">play_circle_filled</i>
         <% end %>
       </td>
-      <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
+      <td><a class="track-info" href="<%= track.url %>"><%= track.track_info %></a></td>
       <td><i class="material-icons small-icon">send</i></td>
       <td>
         <%= link_to "/track/#{track.id}", method: 'delete' do %>
