@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     if request.headers["HTTP_AUTHORIZATION"]
       @current_user = User.find_by(uid: request.headers["HTTP_AUTHORIZATION"])
     else
-      @current_user = User.find(session[:user_id])
+      @current_user = User.find_by(session[:user_id])
     end
   end
 
