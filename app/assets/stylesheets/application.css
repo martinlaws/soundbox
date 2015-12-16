@@ -29,8 +29,8 @@ body {
   margin: 0 1px;
 }
 
-h3.box-title {
-  font-family: 'La Belle Aurore', serif;
+h3.box-title, strong {
+  font-family: 'Courier New', sans-serif;
   color: #C1CDCA;
   text-transform: lowercase;
 }
@@ -59,4 +59,8 @@ i {
 .small-icon {
   border: none;
   cursor: pointer;
+}
+
+strong {
+  font-size: 24px;
 }

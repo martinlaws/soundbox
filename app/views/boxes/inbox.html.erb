@@ -9,7 +9,9 @@
       <th>Share</th>
       <th>Add to a Box</th>
     </tr>
+    <% song_list = []  %>
     <% @box.each do |track| %>
+    <% song_list << track.url  %>
     <tr>
         <td>
           <%= link_to "", class: "play", id: track.url do %>
@@ -23,9 +25,9 @@
           <% end %>
         </td>
         <td>
-          <i class="material-icons small-icon">send</i>
           <form id="<%=track.url%>`<%=track.track_info%>" class="share">
-            <input type="submit" value="Send"><input class='username' type="text" name="username" placeholder="Enter a username">
+            <input class='username' type="text" name="username" placeholder="Enter a username">
+            <button type="submit"><i class="material-icons small-icon">send</i></button>
           </form>
         </td>
         <td>
@@ -44,6 +46,7 @@
     <% end %>
 
   </table>
+  <button class="play_all" type="button" id="<%= song_list%>"><i class="material-icons">play_circle_filled</i></button>
 </div>
 
 <footer id="player-footer"><%= render "shared/player" %></footer>
