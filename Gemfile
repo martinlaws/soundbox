@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-
+# Puma for heroku web server
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -57,5 +58,4 @@ end
 
 group :production do
   gem 'pg'
-  gem 'puma'
 end

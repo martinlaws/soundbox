@@ -61,7 +61,7 @@ $(function(){
     $.ajax({
       method: 'POST',
       action: 'xhttp',
-      url: 'http://localhost:3000/api/tracks',
+      url: 'http://soundbox-app.herokuapp.com/api/tracks',
       data: {track: trackData}
     }, function(response) {
       $('.notification').slideDown('slow').delay(1500).slideUp('slow');

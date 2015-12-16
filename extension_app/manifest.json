@@ -17,7 +17,7 @@
     "activeTab",
     "declarativeContent",
     "https://soundcloud.com/*",
-    "http://localhost:3000/*",
+    "http://soundbox-app.herokuapp.com/*",
     "cookies"
   ],
   "content_scripts": [

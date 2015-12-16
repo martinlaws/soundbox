@@ -20,7 +20,7 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.runtime.onMessage.addListener(function(request, sender, callback) {
     switch (request.action) {
       case "xhttp":
-        chrome.cookies.get({ "url": 'http://localhost:3000', "name": 'auth_token'}, function(cookie) {
+        chrome.cookies.get({ "url": 'http://soundbox-app.herokuapp.com', "name": 'auth_token'}, function(cookie) {
           console.log(cookie)
           var xhttp = new XMLHttpRequest();
           var method = request.method ? request.method.toUpperCase() : 'GET';
@@ -47,9 +47,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
         break;
 
       case "auth":
-        chrome.cookies.get({ "url": 'http://localhost:3000', "name": 'auth_token'}, function(cookie) {
+        chrome.cookies.get({ "url": 'soundbox-app.herokuapp.com', "name": 'auth_token'}, function(cookie) {
           if (!cookie) {
-            window.open('http://localhost:3000/auth/soundcloud');
+            window.open('soundbox-app.herokuapp.com/auth/soundcloud');
           }
         });
     }
