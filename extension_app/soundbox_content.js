@@ -1,5 +1,4 @@
 $().ready(function() {
-
   var trackData = {};
   var boxIcon = chrome.extension.getURL("box.png");
 
@@ -33,34 +32,5 @@ $().ready(function() {
   }
 
   setInterval(addButton, 1000);
-
-
-  // function addIndividualButton() {
-  //   $('.compactTrackListItem__content').not('.appended').addClass('appended').prepend($soundBoxButton);
-  // }
-
-
-  // setInterval(addIndividualButton, 1000);
-
-  // function findPlayedTrackData() {
-  //   var trackURL = $('.playbackSoundBadge__title')[0].href;
-  //   trackData["url"] = trackURL;
-  // }
-
-  // setInterval(addIndividualButton, 1000);
-
-  // $('#close-button').on('click', function() {
-  //   $('#option-menu').removeClass('show-menu');
-  // });
-
-  // $('.compactTrackListItem__content').on('click', function() {
-  //   var trackInfo = $(this).find('span.compactTrackListItem__trackTitle').text().split("-");
-  //   var trackTitle = trackInfo[0];
-  //   var trackArtist = trackInfo[1];
-
-  //   trackData["title"] = trackTitle;
-  //   trackData["artist"] = trackArtist;
-  //   setTimeout(findPlayedTrackData, 1000);
-  // });
 
 });

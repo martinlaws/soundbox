@@ -8,7 +8,7 @@
 
   <table>
     <tr>
-      <th></th>
+      <th><button class="button"></button></th>
       <th>Track Info</th>
       <th>Actions</th>
       <th>Share</th>
@@ -20,13 +20,15 @@
             <i class="material-icons">play_circle_filled</i>
           <% end %>
         </td>
-        <td><a href="<%= track.url %>"><%= track.track_info %></a></td>
+        <td class="track"><a href="<%= track.url %>"><%= track.track_info %></a></td>
         <td>
           <%= link_to "/track/#{track.id}", method: 'delete' do %>
             <i class="material-icons">highlight_off</i>
           <% end %>
         </td>
-        <td><button class='button'>Share</button></td>
+        <td><form id="<%=track.url%>`<%=track.track_info%>" class="share">
+          <input type="submit" value="Send"><input class='username' type="text" name="username" value="Enter a username">
+        </form></td>
     </tr>
     <% end %>
 
