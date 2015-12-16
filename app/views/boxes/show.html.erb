@@ -10,24 +10,27 @@
       <th>Share</th>
       <th>Delete</th>
     </tr>
+    <% song_list = []  %>
     <% @box.tracks.each do |track| %>
-    <tr>
-      <td>
-        <%= link_to "", class: "play", id: track.url do %>
-          <i class="material-icons small-icon">play_circle_filled</i>
-        <% end %>
-      </td>
-      <td><a class="track-info" href="<%= track.url %>"><%= track.track_info %></a></td>
-      <td>
-        <%= link_to "/track/#{track.id}", method: 'delete' do %>
-          <i class="material-icons small-icon">highlight_off</i>
-        <% end %>
-      </td>
-      <td><i class="material-icons small-icon">send</i></td>
-    </tr>
+      <% song_list << track.url  %>
+      <tr>
+        <td>
+          <%= link_to "", class: "play", id: track.url do %>
+            <i class="material-icons small-icon">play_circle_filled</i>
+          <% end %>
+        </td>
+        <td><a class="track-info" href="<%= track.url %>"><%= track.track_info %></a></td>
+        <td>
+          <%= link_to "/track/#{track.id}", method: 'delete' do %>
+            <i class="material-icons small-icon">highlight_off</i>
+          <% end %>
+        </td>
+        <td><i class="material-icons small-icon">send</i></td>
+      </tr>
     <% end %>
 
   </table>
+  <button class="play_all" type="button" id="<%= song_list%>"><i class="material-icons">play_circle_filled</i></button>
 </div>
 
 <footer id="player-footer"><%= render "shared/player" %></footer>
