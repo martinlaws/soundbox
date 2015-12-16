@@ -31,6 +31,7 @@ body {
 
 h3.box-title {
   font-family: 'La Belle Aurore', serif;
+  color: #C1CDCA;
 }
 
 h3.box-title a {
@@ -53,3 +54,4 @@ h3.box-title a {
 i {
   text-decoration: none !important;
 }
+
