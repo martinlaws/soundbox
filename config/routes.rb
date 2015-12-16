@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'splash#splash'
   get 'users/:id/boxes/inbox', to: 'boxes#inbox'
+  post '/inbox/:track_id', to: 'boxes#move'
   delete 'track/:id', to: 'boxes#inbox_track_destroy'
 
   # Routes for Sessions and Authentication

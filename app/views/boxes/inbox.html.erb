@@ -28,6 +28,18 @@
           <% end %>
         </td>
         <td><button class='button'>Share</button></td>
+        <td>
+          <form action="/inbox/<%=track.id%>" method="post">
+            <select name="box_id">
+              <%= @boxes.each do |box| %>
+              <option value="<%= box.id %>">
+                <%= box.name %>
+              </option>
+              <% end %>
+            </select>
+            <button type="submit"><i class="material-icons">highlight_off</i></button>
+          </form>
+        </td>
     </tr>
     <% end %>
 
