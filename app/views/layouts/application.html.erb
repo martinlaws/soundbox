@@ -6,6 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link href='https://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <div class="row">
@@ -15,7 +16,7 @@
           <button class="button-primary">Sign up</button>
           <button class="button-primary">My Boxes</button>
         <% else %>
-          <h5>You're logged in!</h5>
+          <button class="button-primary"><%= @current_user.username %>'s Boxes</button>
         <% end %>
       </nav>
     </div>
