@@ -42,13 +42,13 @@ a#my-boxes:hover {
   color: #C79687;
 }
 
-h3.box-title, strong {
+h3.box-title a, strong {
   font-family: 'Courier New', sans-serif;
   color: #C1CDCA;
   text-transform: lowercase;
 }
 
-h3.box-title:hover {
+h3.box-title a:hover {
   color: #C79687 !important;
 }
 
