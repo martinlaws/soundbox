@@ -40,6 +40,13 @@ a#my-boxes {
 
 a#my-boxes:hover {
   color: #C79687;
+  margin-right: 5%;
+}
+
+h3.box-title, strong {
+  font-family: 'Courier New', sans-serif;
+  color: #C1CDCA;
+  text-transform: lowercase;
 }
 
 h3.box-title a, strong {
