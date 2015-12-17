@@ -5,5 +5,5 @@ $('#login').on('click', function() {
     // FIXME Race-condition prone if you open multiple services in parallel
       debugger;
 
-    var authWindow = window.open('soundbox-app.herokuapp.com/auth/soundcloud');
+    var authWindow = window.open('http://soundbox-app.herokuapp.com/auth/soundcloud');
 });
