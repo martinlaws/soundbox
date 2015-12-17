@@ -24,11 +24,6 @@ body {
   display: block;
 }
 
-#main-nav button {
-  float: right;
-  margin: 0 1px;
-}
-
 a {
   text-decoration: none !important;
   cursor: pointer;
@@ -38,7 +33,7 @@ a:hover {
   color: #C79687 !important;
 }
 
-a#my-boxes {
+#main-nav a {
   font-family: 'Courier New', sans-serif;
   color: #C1CDCA;
   text-transform: lowercase;
