@@ -29,6 +29,15 @@ body {
   margin: 0 1px;
 }
 
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #C79687 !important;
+
+}
+
 a#my-boxes {
   font-family: 'Courier New', sans-serif;
   color: #C1CDCA;
