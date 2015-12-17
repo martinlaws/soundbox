@@ -36,11 +36,11 @@ a#my-boxes {
   text-decoration: none;
   float: right;
   font-size: 1.5em;
+  margin-right: 5%;
 }
 
 a#my-boxes:hover {
   color: #C79687;
-  margin-right: 5%;
 }
 
 h3.box-title, strong {
