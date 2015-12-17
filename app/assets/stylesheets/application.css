@@ -29,6 +29,12 @@ body {
   margin: 0 1px;
 }
 
+.box-title {
+  font-family: 'Courier New', sans-serif;
+  color: #C1CDCA;
+  text-transform: lowercase;
+}
+
 h3.box-title, strong {
   font-family: 'Courier New', sans-serif;
   color: #C1CDCA;
