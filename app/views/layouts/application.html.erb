@@ -17,7 +17,7 @@
           <button class="button-primary">My Boxes</button>
         <% else %>
           <%= link_to "My Boxes", user_path(@current_user), method:'get', id: 'my-boxes' %>
-          <a href="/users/<%=@user.id%>/boxes/new", id: 'my-boxes'>/Create.</a>
+          <a href="/users/<%=@current_user.id%>/boxes/new", id: 'my-boxes'>/Create.</a>
         <% end %>
       </nav>
     </div>
