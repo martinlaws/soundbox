@@ -16,7 +16,7 @@
           <button class="button-primary">Sign up</button>
           <button class="button-primary">My Boxes</button>
         <% else %>
-          <%= button_to "#{@current_user.username}'s Boxes", user_path(@current_user), method:'get', class: 'button-primary' %>
+          <%= link_to "My Boxes", user_path(@current_user), method:'get', class: 'button-primary' %>
         <% end %>
       </nav>
     </div>
