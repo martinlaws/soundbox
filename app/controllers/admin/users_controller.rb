@@ -55,7 +55,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def check_admin
-    redirect_to root_url, flash[:notice] = "Cannot view unless admin" unless current_user.admin
+    not_admin_notice = "Sorry, you have to be an administrator to view this page"
+
+    redirect_to root_url, flash[:notice] = not_admin_notice unless current_user.admin
   end
 
 end
