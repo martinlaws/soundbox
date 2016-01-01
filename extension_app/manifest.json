@@ -18,7 +18,8 @@
     "declarativeContent",
     "https://soundcloud.com/*",
     "http://soundbox-app.herokuapp.com/*",
-    "cookies"
+    "cookies",
+    "storage"
   ],
   "content_scripts": [
     {
@@ -26,11 +27,10 @@
       "matches": ["https://soundcloud.com/*"],
       "exclude_matches": ["https://soundcloud.com/connect*"],
       "css": ["soundbox.css"],
-      "js": ["jquery-2.1.4.js", "popup_app.js", "soundcloud_auth.js", "soundbox_content.js"]
+      "js": ["jquery-2.1.4.js", "popup_app.js", "soundcloud_auth.js", "out_script.js"]
     }
   ],
   "web_accessible_resources": [
     "box.png"
   ]
 }
-//

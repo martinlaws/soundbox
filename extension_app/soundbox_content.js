@@ -1,4 +1,5 @@
 $().ready(function() {
+
   var trackData = {};
   var boxIcon = chrome.extension.getURL("box.png");
 
@@ -29,7 +30,6 @@ $().ready(function() {
       }, function(response) {
         $('.notification').slideDown('slow').delay(1500).slideUp('slow');
         console.log(response);
-        /*Callback function to deal with the response*/
       });
 
     });
@@ -38,3 +38,4 @@ $().ready(function() {
   setInterval(addButton, 1000);
 
 });
+
