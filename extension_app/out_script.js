@@ -18937,11 +18937,7 @@ $().ready(function () {
     displayName: 'SoundBoxButton',
 
     render: function render() {
-      return React.createElement(
-        'div',
-        { className: 'addButton' },
-        'I am a SoundBox!'
-      );
+      return React.createElement('div', { className: 'addButton' });
     }
   });
 
@@ -18950,11 +18946,13 @@ $().ready(function () {
   }
 
   function addButton() {
-    var targets = $('.sound__artwork').not('.appended');
-    console.log("Expecting multiple targets, got [", targets.length, "] targets.", targets);
-    targets.addClass('appended');
+    var $targets = $('.sound__artwork').not('.appended');
+    // console.log("Expecting multiple targets, got [", $targets.length, "] targets.", $targets);
+    $targets.addClass('appended');
+    $targets.append('<div class="soundbox-button"></div>');
 
-    $.each($(targets), function (index, ea) {
+    var $buttonTargets = $('.soundbox-button');
+    $.each($buttonTargets, function (index, ea) {
       addComponent(ea);
     });
   }

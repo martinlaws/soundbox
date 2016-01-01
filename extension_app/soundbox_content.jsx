@@ -6,7 +6,7 @@ $().ready(function() {
   var SoundBoxButton = React.createClass ({
     render: function() {
       return (
-        <div className="addButton">I am a SoundBox!</div>
+        <div className="addButton"></div>
       )
     }
   });
@@ -16,13 +16,15 @@ $().ready(function() {
   }
 
   function addButton() {
-    var targets = $('.sound__artwork').not('.appended');
-    console.log( "Expecting multiple targets, got [", targets.length, "] targets.", targets );
-    targets.addClass('appended');
+    var $targets = $('.sound__artwork').not('.appended');
+    // console.log("Expecting multiple targets, got [", $targets.length, "] targets.", $targets);
+    $targets.addClass('appended');
+    $targets.append('<div class="soundbox-button"></div>');
 
-    $.each($(targets), function(index, ea) {
+    var $buttonTargets = $('.soundbox-button');
+    $.each($buttonTargets, function(index, ea) {
       addComponent(ea);
-    })
+    });
 
   }
 
