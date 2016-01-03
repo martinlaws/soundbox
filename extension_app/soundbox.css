@@ -1,4 +1,4 @@
-/*.icon {
+.icon {
   width: 20px;
   height: 20px;
 }
@@ -6,7 +6,7 @@
 .icon-button {
   border-style: none;
   background: transparent;
-}*/
+}
 
 .notification {
   display: none;
@@ -34,5 +34,7 @@
   height: 20px;
   border: 1px solid darkgrey;
   color: pink;
-  background-color: pink;
+  background-color: lightblue;
+  margin: 10px 0px 0px 7px;
+  cursor: pointer;
 }
