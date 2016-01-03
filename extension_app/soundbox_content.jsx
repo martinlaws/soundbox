@@ -4,19 +4,17 @@ var React = require('react');
 $().ready(function() {
 
   var boxIcon = chrome.extension.getURL("box.png");
-  // var trackData = {};
-
-  // var trackURL = $(this).children('a').prop('href');
-  // var trackInfo = $(this).find('span.sc-artwork').attr('aria-label');
-
-  // trackData["url"] = trackURL;
-  // trackData["track_info"] = trackInfo;
+  var trackData = {};
   
   var SoundBoxButton = React.createClass ({
 
+// handleClick is where the ajax post should go
     handleClick: function() {
       console.log("you clicked a button");
-      console.log(this.props.info);
+      trackData["url"] = this.props.url;
+      trackData["track_info"] = this.props.trackinfo;
+      console.log(this.props.url);
+      console.log(this.props.trackinfo);
     },
 
     render: function() {
@@ -31,7 +29,7 @@ $().ready(function() {
   function addComponent(targetDiv) {
     var trackURL = $(targetDiv).prev()[0].href
     var trackInfo = $(targetDiv).prev('.sound__coverArt').find('span.sc-artwork').attr('aria-label');
-    ReactDOM.render(<SoundBoxButton info={trackInfo} url={trackURL} />, targetDiv);
+    ReactDOM.render(<SoundBoxButton trackinfo={trackInfo} url={trackURL} />, targetDiv);
   }
 
   function addButton() {
@@ -65,5 +63,6 @@ $().ready(function() {
       //   $('.notification').slideDown('slow').delay(1500).slideUp('slow');
       //   console.log(response);
       // });
-// Warning: HTMLImageElement(...): No `render` method found on the returned component instance: you may have forgotten to define `render`, 
-// returned null/false from a stateless component, or tried to render an element whose type is a function that isn't a React component.
+
+// initial state is a certain icon
+// change state when a song is added, set it to be another icon/colour
