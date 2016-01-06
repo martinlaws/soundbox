@@ -18935,17 +18935,29 @@ $().ready(function () {
 
   var boxIcon = chrome.extension.getURL("box.png");
   var trackData = {};
+  var userName = $('.userNav__username').text();
 
   var SoundBoxButton = React.createClass({
     displayName: 'SoundBoxButton',
 
     // handleClick is where the ajax post should go
     handleClick: function handleClick() {
-      console.log("you clicked a button");
+      // console.log("you clicked a button");
       trackData["url"] = this.props.url;
       trackData["track_info"] = this.props.trackinfo;
+      trackData["username"] = userName;
+
       console.log(this.props.url);
       console.log(this.props.trackinfo);
+      chrome.runtime.sendMessage({
+        method: 'POST',
+        action: 'xhttp',
+        url: 'http://soundbox-app.herokuapp.com/api/tracks',
+        data: { track: trackData }
+      }, function (response) {
+        $('.notification').slideDown('slow').delay(1500).slideUp('slow');
+        console.log(response);
+      });
     },
 
     render: function render() {
@@ -18979,15 +18991,6 @@ $().ready(function () {
 // <Image
 //   source={{uri: './box.png'}}
 // />
-// chrome.runtime.sendMessage({
-//   method: 'POST',
-//   action: 'xhttp',
-//   url: 'http://soundbox-app.herokuapp.com/api/tracks',
-//   data: {track: trackData}
-// }, function(response) {
-//   $('.notification').slideDown('slow').delay(1500).slideUp('slow');
-//   console.log(response);
-// });
 
 // initial state is a certain icon
 // change state when a song is added, set it to be another icon/colour
