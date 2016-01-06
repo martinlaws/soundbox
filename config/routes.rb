@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  # Roots to a simple splash page
   root 'splash#splash'
+
+  # Custom routes for inbox
   get 'users/:id/boxes/inbox', to: 'boxes#inbox'
   post '/inbox/:track_id', to: 'boxes#move'
   delete 'track/:id', to: 'boxes#inbox_track_destroy'
@@ -16,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # Routes for Admins to be able to manage Users
+  # Routes for admins to be able to manage users
   namespace :admin do
     resources :users
   end

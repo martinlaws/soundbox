@@ -1,6 +1,5 @@
 class Admin::UsersController < ApplicationController
-  # Since we don't have real logins yet, i've commented this out -M
-  # before_action :check_admin
+  before_action :check_admin
 
   def index
     @users = User.all.page(params[:page]).per(10)
@@ -56,7 +55,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def check_admin
-    redirect_to root_url, notice: "Cannot view unless admin" unless current_user.admin
+    not_admin_notice = "Sorry, you have to be an administrator to view this page"
+
+    redirect_to root_url, flash[:notice] = not_admin_notice unless current_user.admin
   end
 
 end
