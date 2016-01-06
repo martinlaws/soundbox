@@ -18940,9 +18940,7 @@ $().ready(function () {
   var SoundBoxButton = React.createClass({
     displayName: 'SoundBoxButton',
 
-    // handleClick is where the ajax post should go
     handleClick: function handleClick() {
-      // console.log("you clicked a button");
       trackData["url"] = this.props.url;
       trackData["track_info"] = this.props.trackinfo;
       trackData["username"] = userName;
