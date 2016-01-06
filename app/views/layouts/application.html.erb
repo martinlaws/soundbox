@@ -11,7 +11,7 @@
   <body>
     <div class="row">
       <nav id="main-nav">
-        <% if session[:id] == 0 %>
+        <% if @current_user == nil %>
           <button class="button-primary" href="/">Log in</button>
           <button class="button-primary">Sign up</button>
           <button class="button-primary">My Boxes</button>
