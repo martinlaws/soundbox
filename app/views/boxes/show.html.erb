@@ -1,5 +1,8 @@
 <div class="container">
   <h3 class="box-title"><%= @box.name %></h3>
+  <%= link_to "/users/#{@current_user.id}/boxes/#{@box.id}", method: 'delete' do %>
+    <h5>Delete</h5>
+  <% end %>
 
   <table>
     <tr>
