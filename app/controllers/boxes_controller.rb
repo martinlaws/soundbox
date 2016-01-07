@@ -41,10 +41,14 @@ class BoxesController < ApplicationController
   def destroy
     @box = Box.find(params[:id])
 
-    if @box.destroy
-      flash[:notice] = "That box has been deleted."
+    if @box.tracks.nil?     
+      if @box.destroy
+        flash[:notice] = "That box has been deleted."
+      else
+        flash[:error] = "Sorry there was an error. Box not deleted."
+      end
     else
-      flash[:error] = "Sorry there was an error. Box not deleted."
+      flash[:error] = "This box contains tracks. Cannot delete."
     end
     redirect_to :back
   end
