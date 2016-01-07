@@ -8,6 +8,11 @@
     <% @user.boxes.each do |box| %>
       <div class="three columns">
         <h3 class="box-title"><a href="/users/<%=@user.id%>/boxes/<%= box.id %>">/<%= box.name %>.</a></h3>
+        <p>
+          <%= link_to "#{@user.id}/boxes/#{box.id}", method: 'delete' do %>
+            <i class="material-icons small-icon">highlight_off</i>
+          <% end %>
+        </p>
       </div>
     <% end %>
     <div class="three columns">

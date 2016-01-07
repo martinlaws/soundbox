@@ -13,7 +13,6 @@ class BoxesController < ApplicationController
     if @box.save
       flash[:notice] = "You've saved a new box called: #{@box.name}"
     else
-      binding.pry
       flash[:error] = "The box didn't save!"
     end
 
@@ -39,6 +38,18 @@ class BoxesController < ApplicationController
     redirect_to "/users/#{@current_user.id}/boxes/inbox"
   end
 
+  def destroy
+    @box = Box.find(params[:id])
+
+    if @box.destroy
+      flash[:notice] = "That box has been deleted."
+    else
+      flash[:error] = "Sorry there was an error. Box not deleted."
+    end
+    redirect_to :back
+  end
+
+# this is being used for destroying tracks in any box
   def inbox_track_destroy
     @track = Track.find(params[:id])
     if @track.destroy
