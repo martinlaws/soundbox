@@ -14,7 +14,6 @@ $().ready(function() {
     targets.on('click', function() {
       var userName = $('.userNav__username').text();
       var trackURL = $(this).children('a').prop('href');
-      // not all title/artist separated by hyphen!
       var trackInfo = $(this).find('span.sc-artwork').attr('aria-label');
 
       trackData["username"] = userName;
@@ -29,7 +28,6 @@ $().ready(function() {
       }, function(response) {
         $('.notification').slideDown('slow').delay(1500).slideUp('slow');
         console.log(response);
-        /*Callback function to deal with the response*/
       });
 
     });
