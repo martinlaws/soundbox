@@ -21,7 +21,8 @@ class BoxesController < ApplicationController
 
   def show
     @box = Box.find(params[:id])
-    render :'/boxes/show'
+    # render :'/boxes/show'
+    render 'show'
   end
 
   def inbox
@@ -41,15 +42,12 @@ class BoxesController < ApplicationController
   def destroy
     @box = Box.find(params[:id])
 
-    if @box.tracks.nil?     
-      if @box.destroy
-        flash[:notice] = "That box has been deleted."
-      else
-        flash[:error] = "Sorry there was an error. Box not deleted."
-      end
+    if @box.destroy
+      flash[:notice] = "That box has been deleted."
     else
-      flash[:error] = "This box contains tracks. Cannot delete."
+      flash[:error] = "Sorry there was an error. Box not deleted."
     end
+
     redirect_to :back
   end
 
