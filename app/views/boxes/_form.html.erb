@@ -1,11 +1,11 @@
 <%= form_for @box, :url => url_for(:controller => 'boxes', :action => 'create') do |f| %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :placeholder => 'box name' %>
   </div>
   <div class="actions">
-    <%= f.submit :save %>
+    <%= f.submit :save, :value => 'Make My Box!' %>
   </div>
 
 <% end %>

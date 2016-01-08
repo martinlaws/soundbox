@@ -24,6 +24,20 @@ body {
   display: block;
 }
 
+.nav-buttons {
+  margin-top: 20px;
+  margin-right: -3%;
+}
+
+.welcome {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#box-view {
+  margin-top: 50px;
+}
+
 a {
   text-decoration: none !important;
   cursor: pointer;
