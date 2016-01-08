@@ -30,7 +30,7 @@ Rails.application.routes.draw do
       post '/users/:id/boxes/:box_id', to: '/api/users#update'
       post 'boxes/:box_id/tracks', to: '/api/users#create'
     end
-    resources :tracks, only: [:create, :update]
+    resources :tracks, only: [:create, :update, :destroy]
   end
 
 end

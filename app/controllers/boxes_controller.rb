@@ -25,6 +25,11 @@ class BoxesController < ApplicationController
     render 'show'
   end
 
+  def destroy
+    @box = Box.find(params[:id])
+    @box.destroy
+  end
+
   def inbox
     @box = Track.where(username: @current_user.username, box_id: -1)
     @boxes = Box.where(user_id: @current_user.id )

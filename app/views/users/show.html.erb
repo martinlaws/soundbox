@@ -5,6 +5,9 @@
     </div>
   </div>
   <div class ="row">
+    <div class="three columns">
+      <h3 class="box-title"><a href="/users/<%=@current_user.id%>/boxes/inbox">/Inbox.</a></h3>
+    </div>
     <% @current_user.boxes.each do |box| %>
       <div class="three columns">
         <h3 class="box-title"><a href="/users/<%=@current_user.id%>/boxes/<%= box.id %>">/<%= box.name %>.</a></h3>
@@ -15,9 +18,6 @@
         </p>
       </div>
     <% end %>
-    <div class="three columns">
-      <h3 class="box-title"><a href="/users/<%=@current_user.id%>/boxes/inbox">/Inbox.</a></h3>
-    </div>
   </div>
 
 </div>
