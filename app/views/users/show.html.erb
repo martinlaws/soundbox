@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="eight columns">
-      <p><strong>Welcome back, <%= @current_user.username %></strong></p>
+      <p><strong>Welcome back, <%= @user.username %></strong></p>
     </div>
   </div>
   <div class ="row">
     <div class="three columns">
-      <h3 class="box-title"><a href="/users/<%=@current_user.id%>/boxes/inbox">/Inbox.</a></h3>
+      <h3 class="box-title"><a href="/users/<%=@user.id%>/boxes/inbox">/Inbox.</a></h3>
     </div>
-    <% @current_user.boxes.each do |box| %>
+    <% @user.boxes.each do |box| %>
       <div class="three columns">
-        <h3 class="box-title"><a href="/users/<%=@current_user.id%>/boxes/<%= box.id %>">/<%= box.name %>.</a></h3>
+        <h3 class="box-title"><a href="/users/<%=@user.id%>/boxes/<%= box.id %>">/<%= box.name %>.</a></h3>
         <p>
-          <%= link_to "/users/#{@current_user.id}/boxes/#{box.id}", method: 'delete' do %>
+          <%= link_to "/users/#{@user.id}/boxes/#{box.id}", method: 'delete' do %>
             <i class="material-icons small-icon">highlight_off</i>
           <% end %>
         </p>
