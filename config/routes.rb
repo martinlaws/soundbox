@@ -33,4 +33,6 @@ Rails.application.routes.draw do
     resources :tracks, only: [:create, :update, :destroy]
   end
 
+  post '/api/tracks/share', to: 'api/tracks#share'
+
 end

@@ -29,6 +29,17 @@ class Api::TracksController < ApplicationController
     end
   end
 
+  def share
+    @track = Track.new(track_params)
+    @track.box_id = @track.box_id || -1
+
+    if @track.save
+      redirect_to :back
+    else
+      raise "WTF"
+    end
+  end
+
   def destroy
     @track.destroy
 
@@ -40,7 +51,7 @@ class Api::TracksController < ApplicationController
   private
 
     def track_params
-      params.require(:track).permit(:username, :url, :track_info, :box_id)
+      params.permit(:username, :url, :track_info, :box_id)
     end
 
 end

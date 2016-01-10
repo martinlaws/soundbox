@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def require_user
+    # @current_user = User.find(1) 
     if request.headers["HTTP_AUTHORIZATION"]
       @current_user = User.find_by(uid: request.headers["HTTP_AUTHORIZATION"])
     else
