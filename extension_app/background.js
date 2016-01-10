@@ -49,7 +49,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
       case "auth":
         chrome.cookies.get({ "url": 'http://soundbox-app.herokuapp.com', "name": 'auth_token'}, function(cookie) {
           if (!cookie) {
-            window.open('http://soundbox-app.herokuapp.com/auth/soundcloud');
+            // window.open('http://soundbox-app.herokuapp.com/auth/soundcloud');
+            chrome.tabs.update(null, {url:'http://soundbox-app.herokuapp.com/auth/soundcloud'});
           }
         });
     }
