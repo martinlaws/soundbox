@@ -25,7 +25,9 @@
             <% end %>
           </td>
           <td>
-            <form id="<%=track.url%>`<%=track.track_info%>" class="share">
+            <form action="/api/tracks/share" method="POST" class="share">
+              <input type="hidden" name="track_info" value="<%=track.track_info%>"/>
+              <input type="hidden" name="url" value="<%=track.url%>"/>
               <input class='username' type="text" name="username" placeholder="Enter a username">
               <button type="submit"><i class="material-icons small-icon">send</i></button>
             </form>

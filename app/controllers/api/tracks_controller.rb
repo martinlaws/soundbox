@@ -30,13 +30,19 @@ class Api::TracksController < ApplicationController
   end
 
   def share
-    @track = Track.new(track_params)
-    @track.box_id = @track.box_id || -1
+    user = User.find_by(:username => track_params[:username])
 
-    if @track.save
-      redirect_to :back
+    if(user)
+      @track = Track.new(track_params.merge(user_id: user.id))
+      @track.box_id = @track.box_id || -1
+
+      if @track.save
+        redirect_to :back
+      else
+        raise "WTF"
+      end
     else
-      raise "WTF"
+      raise "user not found"
     end
   end
 
