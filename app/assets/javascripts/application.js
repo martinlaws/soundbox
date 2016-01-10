@@ -49,11 +49,11 @@ $(function(){
 
   $('.share').on('submit', function(event) {
 
-    userName = $(this).find('.username').val();
-    trackURL = this.id.split('`')[0];
-    trackInfo = this.id.split('`')[1];
+    var userName = $(this).find('.username').val();
+    var trackURL = $(this).data('track-url');
+    var trackInfo = $(this).data('track-info');
 
-    trackData = {};
+    var trackData = {};
     trackData["username"] = userName;
     trackData["url"] = trackURL;
     trackData["track_info"] = trackInfo;
