@@ -47,6 +47,10 @@ a#my-boxes:hover {
   color: #C79687;
 }
 
+h3.box-title {
+  margin-top: 1.5em;
+}
+
 h3.box-title, strong {
   font-family: 'Courier New', sans-serif;
   color: #C1CDCA;
@@ -59,7 +63,7 @@ h3.box-title a, strong {
   text-transform: lowercase;
 }
 
-h3.box-title a:hover {
+h3.box-title a:hover, .material-icons:hover {
   color: #C79687 !important;
 }
 
@@ -91,4 +95,23 @@ i {
 
 strong {
   font-size: 24px;
+}
+
+table {
+  margin-left: 2%;
+}
+
+#new-save input {
+  font-family: 'Courier New';
+  font-size: 24px;
+  text-transform: lowercase;
+  color: #C1CDCA;
+}
+
+#new-box-name {
+  font-family: 'Courier New';
+}
+
+.back-nav {
+  font-family: 'Courier New';
 }

@@ -1,10 +1,10 @@
 <%= form_for @box, :url => url_for(:controller => 'boxes', :action => 'create') do |f| %>
 
-  <div class="field">
+  <div class="field" id="new-box-name">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="actions">
+  <div class="actions" id="new-save">
     <%= f.submit :save %>
   </div>
 
