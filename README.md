@@ -8,3 +8,5 @@ SoundBox reimagines how you share your favourite music.
   <li>Add your favourite track, they'll automatically appear in your inbox.</li>
   <li>Listen to, share, reorganize, and thoroughly enjoy your new boxes.</li>
 </ol>
+
+If you have any questions, please email grant@soundbox.co.
