@@ -3,7 +3,7 @@ class SplashController < ApplicationController
   before_action :require_user
 
   def splash
-    render :'splash/index'
+    render :'splash/index', layout: false
   end
 
 end
