@@ -25,6 +25,7 @@ module SoundboxBackend
 
     # Serving up the stylesheets and images
     config.serve_static_assets = true
+    config.assets.precompile += [ 'splash-style.css' ]
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
