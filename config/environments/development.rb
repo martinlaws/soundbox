@@ -7,7 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Serving up the stylesheets and images
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
   # Do not eager load code on boot.
   config.eager_load = false

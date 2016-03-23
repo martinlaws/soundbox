@@ -24,7 +24,7 @@ module SoundboxBackend
     config.active_record.raise_in_transactional_callbacks = true
 
     # Serving up the stylesheets and images
-    config.serve_static_assets = true
+    config.serve_static_files = true
     config.assets.precompile += [ 'splash-style.css' ]
 
     config.middleware.insert_before 0, "Rack::Cors" do
