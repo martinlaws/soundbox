@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-  background-image: url("../images/wallpaper.png");
+  background-image: url(image_path("wallpaper.png"));
   font-family: Inconsolata;
   color: white;
   letter-spacing: 3px;
