@@ -1,7 +1,7 @@
 class SplashController < ApplicationController
-  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def splash
+    @subscriber = Subscriber.new
     render :'splash/index', layout: false
   end
 

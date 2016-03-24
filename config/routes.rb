@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :subscribers
   # Roots to a simple splash page
   root 'splash#splash'
 
