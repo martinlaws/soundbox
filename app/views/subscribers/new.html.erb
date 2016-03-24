@@ -1,5 +1,47 @@
-<h1>New Subscriber</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', subscribers_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+    <%= stylesheet_link_tag 'splash-style', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <title>Soundbox</title>
+  </head>
+  <body>
+    <div class="header">
+      <header>
+        <div class="big_logo">
+          <img src='<%= asset_path("logo.png") %>' alt="logo" class="logo"/>
+          <p id="notice"><%= notice %></p>
+        </div>
+      </header>
+    </div>
+    <div class="container">
+      <h1>MUSIC SHARING IS ABOUT TO BE BROUGHT INTO THE FUTURE</h1>
+      <div class="signup">
+        <h4 class="call_to_action">get the beta release <span class="ellipsis two"> > </span><span class="ellipsis three"> > </span><span class="ellipsis four"> > </span></h4>
+        <%= render 'subscribers/form' %>
+      </div>
+    </div>
+    <div class="footer">
+      <footer>
+        <h3 class="coming_soon">
+          coming soon
+          <span class="ellipsis one">.</span>
+          <span class="ellipsis two">.</span>
+          <span class="ellipsis three">.</span>
+          <span class="ellipsis four">.</span>
+          <span class="ellipsis five">1</span>
+          <span class="ellipsis six">5</span>
+          <span class="ellipsis seven">/</span>
+          <span class="ellipsis eight">0</span>
+          <span class="ellipsis nine">6</span>
+          <span class="ellipsis ten">/</span>
+          <span class="ellipsis eleven">1</span>
+          <span class="ellipsis twelve">6</span>
+        </h3>
+      </footer>
+    </div>
+  </body>
+</html>

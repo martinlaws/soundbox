@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :subscribers
   # Roots to a simple splash page
-  root 'splash#splash'
+  root 'subscribers#new'
 
   # Custom routes for inbox
   get 'users/:id/boxes/inbox', to: 'boxes#inbox'

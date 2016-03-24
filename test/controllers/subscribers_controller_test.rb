@@ -18,7 +18,7 @@ class SubscribersControllerTest < ActionController::TestCase
 
   test "should create subscriber" do
     assert_difference('Subscriber.count') do
-      post :create, subscriber: {  }
+      post :create, subscriber: { email: @subscriber.email }
     end
 
     assert_redirected_to subscriber_path(assigns(:subscriber))
@@ -35,7 +35,7 @@ class SubscribersControllerTest < ActionController::TestCase
   end
 
   test "should update subscriber" do
-    patch :update, id: @subscriber, subscriber: {  }
+    patch :update, id: @subscriber, subscriber: { email: @subscriber.email }
     assert_redirected_to subscriber_path(assigns(:subscriber))
   end
 

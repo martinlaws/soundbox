@@ -1,5 +1,6 @@
 class SubscribersController < ApplicationController
   before_action :set_subscriber, only: [:show, :edit, :update, :destroy]
+  layout false
 
   # GET /subscribers
   # GET /subscribers.json
@@ -29,10 +30,10 @@ class SubscribersController < ApplicationController
     respond_to do |format|
       if @subscriber.save
         OptInMailer.opt_in_email(@subscriber).deliver_later
-        format.html { redirect_to root_path, notice: "Thanks! We'll be sending you an email shortly." }
+        format.html { redirect_to root_path, notice: "Thanks! Check your inbox :)" }
         format.json { render :show, status: :created, location: @subscriber }
       else
-        format.html { redirect_to root_path, notice: "Something went wrong. Try again soon." }
+        format.html { render :new }
         format.json { render json: @subscriber.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +44,7 @@ class SubscribersController < ApplicationController
   def update
     respond_to do |format|
       if @subscriber.update(subscriber_params)
-        format.html { redirect_to @subscriber, notice: 'Subscriber was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Subscriber was successfully updated.' }
         format.json { render :show, status: :ok, location: @subscriber }
       else
         format.html { render :edit }
@@ -70,6 +71,6 @@ class SubscribersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subscriber_params
-      params[:subscriber]
+      params.require(:subscriber).permit(:email)
     end
 end

@@ -1,3 +1,3 @@
 class SubscriberSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :email
 end
