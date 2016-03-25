@@ -4,7 +4,7 @@ class OptInMailer < ApplicationMailer
 
   def opt_in_email(subscriber)
     @subscriber = subscriber
-    mail(to: 'oliver.androi@gmail.com', subject: 'new message')
+    mail(to: 'dorian.wolf@gmail.com', subject: 'new message')
   end
 
 end
