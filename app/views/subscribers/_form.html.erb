@@ -1,15 +1,21 @@
-<%= form_for(@subscriber) do |f| %>
-  <% if @subscriber.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@subscriber.errors.count, "error") %> prohibited this subscriber from being saved:</h2>
+<% if notice %>
+  <h4 class="call_to_action">
+    <span class="ellipsis eight"> < </span>
+    <span class="ellipsis seven"> < </span>
+    <span class="ellipsis six"> < </span>
+    <%= notice %>
+    <span class="ellipsis four"> < </span>
+    <span class="ellipsis three"> < </span>
+    <span class="ellipsis two"> < </span>
+  </h4>
+<% else %>
+  <%= form_for(@subscriber) do |f| %>
+    <% if @subscriber.errors.any? %>
+      <h4 class="call_to_action"><%= @subscriber.errors.full_messages.first %><span class="ellipsis two"> > </span><span class="ellipsis three"> > </span><span class="ellipsis four"> > </span></h4>
+    <% else %>
+      <h4 class="call_to_action">get the beta release <span class="ellipsis two"> > </span><span class="ellipsis three"> > </span><span class="ellipsis four"> > </span></h4>
+    <% end %>
 
-      <ul>
-      <% @subscriber.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+      <%= f.text_field :email, placeholder: 'enter your email', class: 'email' %>
   <% end %>
-
-    <%= f.text_field :email, placeholder: 'enter your email', class: 'email' %>
 <% end %>

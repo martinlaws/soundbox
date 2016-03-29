@@ -30,7 +30,7 @@ class SubscribersController < ApplicationController
     respond_to do |format|
       if @subscriber.save
         OptInMailer.opt_in_email(@subscriber).deliver_later
-        format.html { redirect_to root_path, notice: "Thanks! Check your inbox :)" }
+        format.html { redirect_to root_path, notice: "Thanks! Check your inbox" }
         format.json { render :show, status: :created, location: @subscriber }
       else
         format.html { render :new }
