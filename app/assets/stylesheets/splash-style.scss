@@ -39,7 +39,7 @@ body {
   .title {
     display: table-row;
     float: left;
-    width: 550px;
+    padding-left: 30px;
     margin-top: 20px;
     border-left: 3px solid black;
 
@@ -58,6 +58,9 @@ body {
     img {
       display: inline-block;
       width: 25px;
+    }
+    img:hover {
+      opacity: 0.5;
     }
   }
 
@@ -206,8 +209,7 @@ body {
 }
 
 
-@media screen and (max-width: 500px) {
-
+@media screen and (max-width: 860px) {
   .wrapper {
     margin: 30px;
   }
@@ -234,6 +236,7 @@ body {
       width: 100%;
       border: none;
       margin: 20px auto 0;
+      padding: 0;
       h1 {
         font-size: 20px;
         text-align: center;
@@ -246,19 +249,24 @@ body {
       }
     }
   }
+}
+
+@media screen and (max-width: 760px) {
+
   .content {
     .pitch p:first-child {
       text-align-last: center;
     }
     .date {
 
-      margin: 0;
+      margin: 0 auto;
       .save_the_date {
         float: none;
         p {
           text-align: center;
           text-align-last: center;
           font-size: 15px;
+          margin: 0 auto;
         }
       }
       .made_with_love {
@@ -268,6 +276,7 @@ body {
           text-align: center;
           text-align-last: center;
           font-size: 15px;
+          margin: 0 auto;
         }
       }
     }
