@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SoundBox",
-  "description": "Bringing back the mixtape! On SoundCloud.",
+  "description": "Social Music Discovery",
   "version": "1.0",
   "background": {
     "scripts": ["background.js"],
@@ -9,7 +9,6 @@
   },
   "page_action": {
     "default_icon": "box.png",
-    "default_popup": "soundbox_popup.html",
     "default_title": "You're on SoundCloud! Add to SoundBox"
   },
   "permissions": [

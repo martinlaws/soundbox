@@ -9,37 +9,51 @@
     <title>Soundbox</title>
   </head>
   <body>
-    <div class="header">
-      <header>
-        <div class="big_logo">
-          <img src='<%= asset_path("logo.png") %>' alt="logo" class="logo"/>
-        </div>
-      </header>
-    </div>
-    <div class="container">
-      <h1>MUSIC SHARING IS ABOUT TO BE BROUGHT INTO THE FUTURE</h1>
-      <div class="signup">
-        <%= render 'subscribers/form' %>
+    <div class="wrapper">
+      <div class="header">
+        <header>
+          <div class="logo">
+            <%= image_tag 'logo.png' %>
+          </div>
+          <div class="title">
+            <h1>Social Music Discovery</h1>
+          </div>
+          <div class="social-media">
+            <%= image_tag 'soundcloud.png' %>
+            <%= image_tag 'twitter.png' %>
+            <%= image_tag 'facebook.png' %>
+            <%= image_tag 'instagram.png' %>
+          </div>
+        </header>
       </div>
-    </div>
-    <div class="footer">
-      <footer>
-        <h3 class="coming_soon">
-          coming soon
-          <span class="ellipsis one">.</span>
-          <span class="ellipsis two">.</span>
-          <span class="ellipsis three">.</span>
-          <span class="ellipsis four">.</span>
-          <span class="ellipsis five">1</span>
-          <span class="ellipsis six">5</span>
-          <span class="ellipsis seven">/</span>
-          <span class="ellipsis eight">0</span>
-          <span class="ellipsis nine">6</span>
-          <span class="ellipsis ten">/</span>
-          <span class="ellipsis eleven">1</span>
-          <span class="ellipsis twelve">6</span>
-        </h3>
-      </footer>
+      <div class="content">
+        <div class="pitch">
+          <p>
+            Enter your email below to join THE SOUNDBOX PROJECT.
+          </p>
+          <p>
+            We will never spam you or give away your information. We want to open a line of communication between us and you. We'll only update you on our progress, give you the first invite to secret events and most importantly, let you know when soundbox is online.
+          </p>
+          <p>
+            There are so many things we're excited to share with you.
+          </p>
+          <div class="signup">
+            <%= render 'subscribers/form' %>
+          </div>
+          <div class="date">
+            <div class="save_the_date">
+              <p>
+                save the date... 06/15/2016
+              </p>
+            </div>
+            <div class="made_with_love">
+              <p>
+                made with love by geeks
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

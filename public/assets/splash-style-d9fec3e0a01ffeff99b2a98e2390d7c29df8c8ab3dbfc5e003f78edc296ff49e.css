@@ -1,0 +1,232 @@
+/* line 1, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+*:focus {
+  outline: none;
+}
+
+/* line 5, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 9, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+body {
+  background-image: url("/assets/wallpaper-dd6e5d126c0418634a62ac1dc7996f201acffd95a6cb1357c0ee834017f567b3.png");
+  background-size: 300px;
+  font-family: Inconsolata;
+  color: black;
+}
+
+/* line 16, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.wrapper {
+  max-width: 1000px;
+  min-height: 100%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 27, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+  .logo img {
+    display: block;
+    margin: 0 auto;
+    height: 60px;
+  }
+}
+/* line 39, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.header {
+  display: table;
+  margin: 100px auto 50px;
+}
+/* line 43, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.header .logo {
+  display: table-row;
+  float: left;
+  width: 300px;
+  height: 80px;
+  margin-right: 30px;
+}
+/* line 50, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.header .logo img {
+  width: 300px;
+}
+/* line 55, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.header .title {
+  display: table-row;
+  float: left;
+  width: 550px;
+  margin-top: 20px;
+  border-left: 3px solid black;
+}
+/* line 62, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.header .title h1 {
+  text-transform: uppercase;
+  font-size: 45px;
+  letter-spacing: normal;
+}
+/* line 69, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.header .social-media {
+  display: block;
+  clear: both;
+  padding-top: 15px;
+}
+/* line 74, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.header .social-media img {
+  display: inline-block;
+  width: 25px;
+}
+
+/* line 84, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .pitch {
+  margin: 50px auto;
+  text-align: justify;
+}
+/* line 88, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .pitch p {
+  margin: 20px auto;
+  max-width: 600px;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+/* line 96, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .pitch p:first-child, .content .pitch p:last-child {
+  text-align-last: justify;
+}
+/* line 101, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .signup {
+  width: 306px;
+  margin: 40px auto;
+}
+/* line 105, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .signup form {
+  display: inline-block;
+}
+/* line 109, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .signup .field_with_errors {
+  display: inline-block;
+}
+/* line 113, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .signup .email {
+  vertical-align: middle;
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  font-family: Inconsolata;
+  font-size: 15px;
+  border-radius: 2px;
+  border: 2px solid black;
+}
+/* line 125, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date {
+  margin: 0 50px;
+  font-size: 20px;
+}
+/* line 129, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date p {
+  letter-spacing: 2.5px;
+  margin: 0;
+}
+/* line 134, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date {
+  float: left;
+}
+/* line 137, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .ellipsis {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.0s;
+  animation: dot 3.5s infinite;
+  animation-delay: 0.0s;
+}
+/* line 149, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .two {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+/* line 154, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .three {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+/* line 159, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .four {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+/* line 164, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .five {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+/* line 169, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .six {
+  -webkit-animation-delay: 1.0s;
+  animation-delay: 1.0s;
+}
+/* line 174, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .seven {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+/* line 179, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .eight {
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+}
+/* line 184, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .nine {
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}
+/* line 189, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .ten {
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+/* line 194, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .eleven {
+  -webkit-animation-delay: 2.0s;
+  animation-delay: 2.0s;
+}
+/* line 199, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .date .save_the_date .twelve {
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+}
+@-webkit-keyframes dot {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 219, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+.content .made_with_love {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 226, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+  .signup {
+    position: static;
+    margin: 50px auto;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 234, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+  .date {
+    position: static;
+    text-align: center;
+    margin: 0 20px 5%;
+  }
+
+  /* line 239, /Users/dorianthornton/Documents/math/web dev/soundbox/app/assets/stylesheets/splash-style.scss */
+  .coming_soon {
+    position: static;
+  }
+}
