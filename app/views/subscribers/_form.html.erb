@@ -5,7 +5,7 @@
 <% else %>
   <%= form_for(@subscriber) do |f| %>
     <% if @subscriber.errors.any? %>
-      <h4 class="call_to_action"><%= @subscriber.errors.full_messages.first %><span class="ellipsis two"> > </span><span class="ellipsis three"> > </span><span class="ellipsis four"> > </span></h4>
+      <h4 class="call_to_action"><%= @subscriber.errors.full_messages.first %></h4>
     <% end %>
 
       <%= f.text_field :email, placeholder: 'enter your email...', class: 'email' %>

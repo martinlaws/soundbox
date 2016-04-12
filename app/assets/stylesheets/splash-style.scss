@@ -20,22 +20,6 @@ body {
   text-align: center;
 }
 
-@media screen and (max-width: 500px) {
-
-  .logo {
-
-    img {
-      display: block;
-      margin: 0 auto;
-      height: 60px;
-    }
-
-    h1 {
-
-    }
-  }
-}
-
 .header {
   display: table;
   margin: 100px auto 50px;
@@ -223,20 +207,69 @@ body {
 
 
 @media screen and (max-width: 500px) {
-  .signup {
-    position: static;
-    margin: 50px auto;
-    line-height: 40px;
-  }
-}
 
-@media screen and (max-width: 500px) {
-  .date {
-    position: static;
-    text-align: center;
-    margin: 0 20px 5%;
+  .wrapper {
+    margin: 30px;
   }
-  .coming_soon {
-    position: static;
+
+  .header {
+
+    display: block;
+    margin: 20px auto;
+    .logo {
+      display: block;
+      width: 100%;
+      margin: 0 auto;;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+      }
+    }
+
+    .title {
+
+      display: block;
+      width: 100%;
+      border: none;
+      margin: 20px auto 0;
+      h1 {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    .social-media {
+      img {
+        width: 20px;
+      }
+    }
+  }
+  .content {
+    .pitch p:first-child {
+      text-align-last: center;
+    }
+    .date {
+
+      margin: 0;
+      .save_the_date {
+        float: none;
+        p {
+          text-align: center;
+          text-align-last: center;
+          font-size: 15px;
+        }
+      }
+      .made_with_love {
+        float: none;
+        margin-top: 10px;
+        p {
+          text-align: center;
+          text-align-last: center;
+          font-size: 15px;
+        }
+      }
+    }
   }
 }

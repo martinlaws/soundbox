@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :subscribers
-  # Roots to a simple splash page
+  # Roots to a simple splash page. People can subscribe to get info on the release
   root 'subscribers#new'
+  resources :subscribers, only: [:new, :create]
 
   # Custom routes for inbox
   get 'users/:id/boxes/inbox', to: 'boxes#inbox'
