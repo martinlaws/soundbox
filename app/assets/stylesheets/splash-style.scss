@@ -74,10 +74,9 @@ body {
 
     p {
       margin: 20px auto;
-      max-width: 600px;
+      max-width: 550px;
       font-size: 19px;
       line-height: 22px;
-      letter-spacing: 1px;
     }
 
     p:first-child, p:last-child {
@@ -115,7 +114,7 @@ body {
 
     p {
       letter-spacing: 2.5px;
-      margin: 0;
+      font-size: 22px;
     }
 
     .save_the_date {
@@ -210,14 +209,15 @@ body {
 
 
 @media screen and (max-width: 860px) {
+
   .wrapper {
     margin: 30px;
   }
 
   .header {
-
     display: block;
     margin: 20px auto;
+
     .logo {
       display: block;
       width: 100%;
@@ -231,12 +231,12 @@ body {
     }
 
     .title {
-
       display: block;
       width: 100%;
       border: none;
       margin: 20px auto 0;
       padding: 0;
+
       h1 {
         font-size: 20px;
         text-align: center;
